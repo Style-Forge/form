@@ -1,0 +1,23 @@
+@keyframes Loading {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 28px 0;
+  }
+}
+
+[loading],
+input[loading]
+{
+  user-select: none;
+  pointer-events: none;
+
+  color: hsla(var(--sf-c-txt), 0.3);
+
+  --c1: transparent;
+  --c2: hsla(var(--sf-c-loading), 0.05);
+  background: repeating-linear-gradient(45deg, var(--c1), var(--c1) 10px, var(--c2) 10px, var(--c2) 20px);
+  background-size: 28px 100%;
+  animation: Loading .3s linear infinite;
+}

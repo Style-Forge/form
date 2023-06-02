@@ -1,0 +1,35 @@
+.select {
+  appearance:none;
+  color: hsl(var(--sf-c-txt));
+  border: 1px solid hsla(var(--sf-c-input), 0.2);
+  border-radius: var(--sf-bd-radius);
+  background: none;
+  outline: none;
+}
+.select,
+.select[multiple]
+{
+  padding-block: var(--sf-p-input-block);
+  padding-inline: var(--sf-p-input-inline);
+}
+
+.select:not(:disabled, [multiple]) {
+  background-image:
+    linear-gradient(45deg, transparent 50%, hsla(var(--sf-c-input), 0.2) 50%),
+    linear-gradient(135deg, hsla(var(--sf-c-input), 0.2) 50%, transparent 50%),
+    linear-gradient(to right, hsla(var(--sf-c-input), 0.2), hsla(var(--sf-c-input), 0.2));
+  background-position:
+    calc(100% - 20px) 1em,
+    calc(100% - 15px) 1em,
+    calc(100% - 2.5em) 0.25em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+  background-repeat: no-repeat;
+}
+
+.select:disabled {
+  background: hsla(var(--sf-c-input), 0.05);
+  border-color: transparent;
+}

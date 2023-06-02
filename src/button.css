@@ -1,0 +1,38 @@
+.button,
+input[type="color"],
+input[type="file"]::-webkit-file-upload-button
+{
+  cursor: pointer;
+
+  background: none;
+  color: hsl(var(--sf-c-txt));
+
+  padding-block: var(--sf-p-input-block);
+  padding-inline: var(--sf-p-input-inline);
+
+  outline: none;
+
+  background: hsla(var(--sf-c-input), 0.04);
+  border: 1px solid hsla(var(--sf-c-input), 0.2);
+  border-radius: var(--sf-bd-radius);
+}
+.button:focus:not(:disabled),
+input[type="color"]:focus:not(:disabled),
+input[type="file"]:focus:not(:disabled)::-webkit-file-upload-button
+{
+  box-shadow: 0 0 2px hsla(var(--sf-c-info), 1);
+  border-color: hsla(var(--sf-c-info), 0.4);
+}
+.button:hover:not(:disabled),
+input[type="color"]:hover:not(:disabled),
+input[type="file"]:hover:not(:disabled)::-webkit-file-upload-button
+{
+  background: hsla(var(--sf-c-input), 0.1);
+}
+.button:disabled,
+input[type="color"]:disabled,
+input[type="file"]:disabled::-webkit-file-upload-button
+{
+  text-fill-color: hsl(var(--sf-c-txt));
+  opacity: var(--sf-disabled);
+}

@@ -1,0 +1,18 @@
+input[type="range"] {
+  appearance: none;
+  border: 0;
+  padding: 0;
+  background: hsla(var(--sf-c-input), 0.1);
+  height: 1em;
+
+  border-radius: calc(1em / 2);
+}
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 1em;
+  height: 1em;
+  background: hsla(var(--sf-c-info), 1);
+  border: 0;
+
+  border-radius: 50%;
+}

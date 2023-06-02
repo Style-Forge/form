@@ -1,0 +1,28 @@
+{
+  "name": "style-forge.form",
+  "version": "1.0.0",
+  "description": "Form CSS for style-forge",
+  "main": "form.css",
+  "repository": "github:sarmaged/style-forge.form",
+  "author": "Sarmaged <sarmaged@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "style-forge.form",
+    "form",
+    "input",
+    "select",
+    "switch",
+    "textarea",
+    "html",
+    "css"
+  ],
+  "scripts": {
+    "build": "node builder.js",
+    "prepublishOnly": "yarn build"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.23",
+    "postcss-import": "^15.1.0"
+  }
+}

@@ -1,0 +1,122 @@
+.input {
+  position: relative;
+
+  display: grid;
+}
+.input input {
+  z-index: 1;
+
+  color: hsl(var(--sf-c-txt));
+
+  height: var(--sf-input-height);
+  padding-block: var(--sf-p-input-block);
+  padding-inline: var(--sf-p-input-inline);
+
+  border: 0;
+  background: none;
+  outline: none;
+
+  transition: color 0.1s ease-out;
+
+  border-radius: var(--sf-bd-radius);
+}
+.input label {
+  top: 0;
+  left: var(--sf-p-input-inline);
+  right: auto;
+  bottom: 0;
+  position: absolute;
+
+  z-index: 0;
+
+  margin: auto;
+  height: min-content;
+
+  pointer-events: none;
+
+  font-size: var(--sf-txt);
+
+  color: hsla(var(--sf-c-txt), 0.4);
+
+  transition: 0.1s ease-out;
+  transition-property: font-size, top;
+}
+
+.error:not(.input) {
+  font-size: var(--sf-txt-small);
+  margin-block-end: 1em;
+}
+
+.input input:focus ~ label
+{ color: hsl(var(--sf-c-info)) }
+
+.error
+{ color: hsl(var(--sf-c-error)) }
+
+.input input:required ~ label::before {
+  content: '*';
+  font-size: 1rem;
+  color: hsl(var(--sf-c-error));
+  margin-inline-end: 0.5ex;
+}
+
+.input input::placeholder
+{ color: transparent }
+
+.input input:focus:not(:read-only) ~ label,
+.input input:not(:placeholder-shown) ~ label
+{
+  top: calc(var(--sf-p-input-block) * -6);
+  font-size: var(--sf-txt-small);
+}
+
+.input input ~ .shape {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+
+  content: "";
+
+  border: 1px solid hsla(var(--sf-c-input), 0.2);
+  border-radius: var(--sf-bd-radius);
+
+  transition: border 0.1s ease-out;
+}
+
+.input input:focus ~ .shape,
+.input input:not(:placeholder-shown) ~ .shape
+{
+  border-radius: 0;
+  border-color: transparent;
+}
+
+.input input:not(:placeholder-shown) ~ .shape { border-bottom-color: hsla(var(--sf-c-input), 0.2) }
+.input input:focus ~ .shape { border-bottom-color: hsl(var(--sf-c-info)) }
+
+button.small,
+input.small
+{
+  height: calc(var(--sf-input-height) * 0.75);
+}
+
+.input input:read-only,
+.input input:disabled
+{
+  color: hsl(var(--sf-c-txt));
+  text-fill-color: hsl(var(--sf-c-txt));
+  opacity: var(--sf-disabled);
+}
+.input input:read-only ~ label,
+.input input:disabled ~ label
+{
+  color: hsla(var(--sf-c-txt), 0.4);
+}
+.input input:read-only ~ .shape,
+.input input:disabled ~ .shape
+{
+  background: hsla(var(--sf-c-input), 0.05);
+  border-color: transparent;
+  border-radius: var(--sf-bd-radius);
+}
