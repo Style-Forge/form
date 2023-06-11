@@ -1,4 +1,4 @@
-/*! style-forge.form v1.0.1 | MIT License | github.com/sarmaged/style-forge.form */
+/*! style-forge.form v1.1.0 | MIT License | github.com/sarmaged/style-forge.form */
 
 :root {
   --sf-txt: 1rem;
@@ -10,27 +10,38 @@
   --sf-p-input-inline: 0.5em;
 
   --sf-disabled: 0.4;
+
   --sf-bd-radius: 5px;
 
-  --sf-c-txt: 0, 0%, 10%;
-  --sf-c-loading: 0, 0%, 10%;
-  --sf-c-input: 0, 0%, 10%;
-  --sf-c-info: 200, 100%, 60%;
-  --sf-c-white: 0, 0%, 100%;
-  --sf-c-success: 147, 50%, 47%;
-  --sf-c-error: 0, 100%, 60%;
+  --sf-c-white: 0 0% 100%;
+
+  --sf-c-error: 0 100% 60%;
+  --sf-c-info: 200 100% 60%;
+  --sf-c-input: 0 0% 10%;
+  --sf-c-loading: 0 0% 10%;
+  --sf-c-txt: 0 0% 10%;
+}
+
+:root[data-theme="dark"] {
+  --sf-c-error: 330 100% 71%;
+  --sf-c-info: 219 79% 66%;
+  --sf-c-input: 0 0% 100%;
+  --sf-c-loading: 0 0% 100%;
+  --sf-c-txt: 0 0% 90%;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --sf-c-txt: 0, 0%, 90%;
-    --sf-c-loading: 0, 0%, 100%;
-    --sf-c-input: 0, 0%, 100%;
-    --sf-c-success: 120, 100%, 25%;
-    --sf-c-info: 219, 79%, 66%;
-    --sf-c-error: 330, 100%, 71%;
+  :root[data-theme="auto"],
+  :root[data-theme="dark"] {
+    --sf-c-error: 330 100% 71%;
+    --sf-c-info: 219 79% 66%;
+    --sf-c-input: 0 0% 100%;
+    --sf-c-loading: 0 0% 100%;
+    --sf-c-txt: 0 0% 90%;
   }
 }
+
+input.small { height: calc(var(--sf-input-height) * 0.75) }
 
 .input {
   position: relative;
@@ -73,7 +84,7 @@
 
   font-size: var(--sf-txt);
 
-  color: hsla(var(--sf-c-txt), 0.4);
+  color: hsl(var(--sf-c-txt) / 40%);
 
   transition: 0.1s ease-out;
   transition-property: font-size, top;
@@ -133,7 +144,7 @@
 
   content: "";
 
-  border: 1px solid hsla(var(--sf-c-input), 0.2);
+  border: 1px solid hsl(var(--sf-c-input) / 20%);
   border-radius: var(--sf-bd-radius);
 
   transition: border 0.1s ease-out;
@@ -152,17 +163,11 @@
   border-color: transparent;
 }
 
-.input input:not(:-moz-placeholder-shown) ~ .shape { border-bottom-color: hsla(var(--sf-c-input), 0.2) }
+.input input:not(:-moz-placeholder-shown) ~ .shape { border-bottom-color: hsl(var(--sf-c-input) / 20%) }
 
-.input input:not(:placeholder-shown) ~ .shape { border-bottom-color: hsla(var(--sf-c-input), 0.2) }
+.input input:not(:placeholder-shown) ~ .shape { border-bottom-color: hsl(var(--sf-c-input) / 20%) }
 
 .input input:focus ~ .shape { border-bottom-color: hsl(var(--sf-c-info)) }
-
-button.small,
-input.small
-{
-  height: calc(var(--sf-input-height) * 0.75);
-}
 
 .input input:-moz-read-only
 {
@@ -181,18 +186,18 @@ input.small
 
 .input input:-moz-read-only ~ label
 {
-  color: hsla(var(--sf-c-txt), 0.4);
+  color: hsl(var(--sf-c-txt) / 40%);
 }
 
 .input input:read-only ~ label,
 .input input:disabled ~ label
 {
-  color: hsla(var(--sf-c-txt), 0.4);
+  color: hsl(var(--sf-c-txt) / 40%);
 }
 
 .input input:-moz-read-only ~ .shape
 {
-  background: hsla(var(--sf-c-input), 0.05);
+  background: hsl(var(--sf-c-input) / 5%);
   border-color: transparent;
   border-radius: var(--sf-bd-radius);
 }
@@ -200,10 +205,18 @@ input.small
 .input input:read-only ~ .shape,
 .input input:disabled ~ .shape
 {
-  background: hsla(var(--sf-c-input), 0.05);
+  background: hsl(var(--sf-c-input) / 5%);
   border-color: transparent;
   border-radius: var(--sf-bd-radius);
 }
+
+input[type="search"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+button.small { height: calc(var(--sf-input-height) * 0.75) }
 
 .button,
 input[type="color"],
@@ -219,8 +232,8 @@ input[type="file"]::-webkit-file-upload-button
 
   outline: none;
 
-  background: hsla(var(--sf-c-input), 0.04);
-  border: 1px solid hsla(var(--sf-c-input), 0.2);
+  background: hsl(var(--sf-c-input) / 4%);
+  border: 1px solid hsl(var(--sf-c-input) / 20%);
   border-radius: var(--sf-bd-radius);
 }
 
@@ -228,15 +241,15 @@ input[type="file"]::-webkit-file-upload-button
 input[type="color"]:focus:not(:disabled),
 input[type="file"]:focus:not(:disabled)::-webkit-file-upload-button
 {
-  box-shadow: 0 0 2px hsla(var(--sf-c-info), 1);
-  border-color: hsla(var(--sf-c-info), 0.4);
+  box-shadow: 0 0 2px hsl(var(--sf-c-info));
+  border-color: hsl(var(--sf-c-info) / 40%);
 }
 
 .button:hover:not(:disabled),
 input[type="color"]:hover:not(:disabled),
 input[type="file"]:hover:not(:disabled)::-webkit-file-upload-button
 {
-  background: hsla(var(--sf-c-input), 0.1);
+  background: hsl(var(--sf-c-input) / 10%);
 }
 
 .button:disabled,
@@ -296,7 +309,7 @@ input[type="file"]:disabled::-webkit-file-upload-button
   height: 1em;
   content: '';
 
-  border: 1px solid hsla(var(--sf-c-input), 0.2);
+  border: 1px solid hsl(var(--sf-c-input) / 20%);
 }
 
 .radio input[type="radio"]::after,
@@ -335,11 +348,8 @@ input[type="file"]:disabled::-webkit-file-upload-button
 { border-radius: 50% }
 
 .select {
-  -webkit-appearance:none;
-     -moz-appearance:none;
-          appearance:none;
   color: hsl(var(--sf-c-txt));
-  border: 1px solid hsla(var(--sf-c-input), 0.2);
+  border: 1px solid hsl(var(--sf-c-input) / 20%);
   border-radius: var(--sf-bd-radius);
   background: none;
   outline: none;
@@ -352,24 +362,8 @@ input[type="file"]:disabled::-webkit-file-upload-button
   padding-inline: var(--sf-p-input-inline);
 }
 
-.select:not(:disabled, [multiple]) {
-  background-image:
-    linear-gradient(45deg, transparent 50%, hsla(var(--sf-c-input), 0.2) 50%),
-    linear-gradient(135deg, hsla(var(--sf-c-input), 0.2) 50%, transparent 50%),
-    linear-gradient(to right, hsla(var(--sf-c-input), 0.2), hsla(var(--sf-c-input), 0.2));
-  background-position:
-    calc(100% - 20px) 1em,
-    calc(100% - 15px) 1em,
-    calc(100% - 2.5em) 0.25em;
-  background-size:
-    5px 5px,
-    5px 5px,
-    1px 1.5em;
-  background-repeat: no-repeat;
-}
-
 .select:disabled {
-  background: hsla(var(--sf-c-input), 0.05);
+  background: hsl(var(--sf-c-input) / 5%);
   border-color: transparent;
 }
 
@@ -385,7 +379,7 @@ textarea.textarea {
   padding-block: var(--sf-p-input-block);
   padding-inline: var(--sf-p-input-inline);
 
-  border: 1px solid hsla(var(--sf-c-input), 0.2);
+  border: 1px solid hsl(var(--sf-c-input) / 20%);
   background: none;
   outline: none;
 
@@ -395,13 +389,13 @@ textarea.textarea {
 }
 
 textarea.textarea:-moz-read-only {
-  background: hsla(var(--sf-c-input), 0.05);
+  background: hsl(var(--sf-c-input) / 5%);
   border-color: transparent;
 }
 
 textarea.textarea:read-only,
 textarea.textarea:disabled {
-  background: hsla(var(--sf-c-input), 0.05);
+  background: hsl(var(--sf-c-input) / 5%);
   border-color: transparent;
 }
 
@@ -417,7 +411,7 @@ input[type="range"] {
           appearance: none;
   border: 0;
   padding: 0;
-  background: hsla(var(--sf-c-input), 0.1);
+  background: hsl(var(--sf-c-input) / 10%);
   height: 1em;
 
   border-radius: calc(1em / 2);
@@ -428,8 +422,10 @@ input[type="range"]::-webkit-slider-thumb {
           appearance: none;
   width: 1em;
   height: 1em;
-  background: hsla(var(--sf-c-info), 1);
+  background: hsl(var(--sf-c-white));
   border: 0;
+
+  box-shadow: 0 3px 8px 0 hsl(var(--sf-c-input) / 30%);
 
   border-radius: 50%;
 }
@@ -440,7 +436,7 @@ input[type="color"] {
           appearance: none;
   padding: 3px;
 
-  border: 1px solid hsla(var(--sf-c-input), 0.2);
+  border: 1px solid hsl(var(--sf-c-input) / 20%);
   border-radius: var(--sf-bd-radius);
 }
 
@@ -476,7 +472,7 @@ input[type="datetime-local"]
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  padding-block: 1em 0;
+  padding-block: 1em 0.5em;
 }
 
 .switch {
@@ -522,7 +518,7 @@ input[type="datetime-local"]
   height: var(--sf-switch-size);
   content: '';
 
-  background: hsla(var(--sf-c-input), 0.2);
+  background: hsl(var(--sf-c-input) / 20%);
   border-radius: calc(var(--sf-switch-size) / 2);
 }
 
@@ -544,7 +540,7 @@ input[type="datetime-local"]
 }
 
 .switch input[type="checkbox"]:checked::before {
-  background: hsla(var(--sf-c-info), 1);
+  background: hsl(var(--sf-c-info));
 }
 
 .switch input[type="checkbox"]:checked::after {
@@ -573,10 +569,10 @@ input[loading]
           user-select: none;
   pointer-events: none;
 
-  color: hsla(var(--sf-c-txt), 0.3);
+  color: hsl(var(--sf-c-txt) / 30%);
 
   --c1: transparent;
-  --c2: hsla(var(--sf-c-loading), 0.05);
+  --c2: hsl(var(--sf-c-loading) / 5%);
   background: repeating-linear-gradient(45deg, var(--c1), var(--c1) 10px, var(--c2) 10px, var(--c2) 20px);
   background-size: 28px 100%;
   animation: Loading .3s linear infinite;
