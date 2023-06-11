@@ -34,7 +34,7 @@
   height: var(--sf-switch-size);
   content: '';
 
-  background: hsla(var(--sf-c-input), 0.2);
+  background: hsl(var(--sf-c-input) / 20%);
   border-radius: calc(var(--sf-switch-size) / 2);
 }
 .switch input[type="checkbox"]::after {
@@ -54,7 +54,7 @@
   transition: transform 0.05s ease-in;
 }
 .switch input[type="checkbox"]:checked::before {
-  background: hsla(var(--sf-c-info), 1);
+  background: hsl(var(--sf-c-info));
 }
 .switch input[type="checkbox"]:checked::after {
   transform: translate3d(var(--sf-switch-size), 0, 0);

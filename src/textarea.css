@@ -8,7 +8,7 @@ textarea.textarea {
   padding-block: var(--sf-p-input-block);
   padding-inline: var(--sf-p-input-inline);
 
-  border: 1px solid hsla(var(--sf-c-input), 0.2);
+  border: 1px solid hsl(var(--sf-c-input) / 20%);
   background: none;
   outline: none;
 
@@ -19,7 +19,7 @@ textarea.textarea {
 
 textarea.textarea:read-only,
 textarea.textarea:disabled {
-  background: hsla(var(--sf-c-input), 0.05);
+  background: hsl(var(--sf-c-input) / 5%);
   border-color: transparent;
 }
 

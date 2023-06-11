@@ -42,7 +42,7 @@
   height: 1em;
   content: '';
 
-  border: 1px solid hsla(var(--sf-c-input), 0.2);
+  border: 1px solid hsl(var(--sf-c-input) / 20%);
 }
 .radio input[type="radio"]::after,
 .checkbox input[type="checkbox"]::after

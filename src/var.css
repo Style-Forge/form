@@ -8,24 +8,33 @@
   --sf-p-input-inline: 0.5em;
 
   --sf-disabled: 0.4;
+
   --sf-bd-radius: 5px;
 
-  --sf-c-txt: 0, 0%, 10%;
-  --sf-c-loading: 0, 0%, 10%;
-  --sf-c-input: 0, 0%, 10%;
-  --sf-c-info: 200, 100%, 60%;
-  --sf-c-white: 0, 0%, 100%;
-  --sf-c-success: 147, 50%, 47%;
-  --sf-c-error: 0, 100%, 60%;
+  --sf-c-white: 0 0% 100%;
+
+  --sf-c-error: 0 100% 60%;
+  --sf-c-info: 200 100% 60%;
+  --sf-c-input: 0 0% 10%;
+  --sf-c-loading: 0 0% 10%;
+  --sf-c-txt: 0 0% 10%;
+}
+
+:root[data-theme="dark"] {
+  --sf-c-error: 330 100% 71%;
+  --sf-c-info: 219 79% 66%;
+  --sf-c-input: 0 0% 100%;
+  --sf-c-loading: 0 0% 100%;
+  --sf-c-txt: 0 0% 90%;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --sf-c-txt: 0, 0%, 90%;
-    --sf-c-loading: 0, 0%, 100%;
-    --sf-c-input: 0, 0%, 100%;
-    --sf-c-success: 120, 100%, 25%;
-    --sf-c-info: 219, 79%, 66%;
-    --sf-c-error: 330, 100%, 71%;
+  :root[data-theme="auto"],
+  :root[data-theme="dark"] {
+    --sf-c-error: 330 100% 71%;
+    --sf-c-info: 219 79% 66%;
+    --sf-c-input: 0 0% 100%;
+    --sf-c-loading: 0 0% 100%;
+    --sf-c-txt: 0 0% 90%;
   }
 }

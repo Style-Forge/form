@@ -1,3 +1,5 @@
+button.small { height: calc(var(--sf-input-height) * 0.75) }
+
 .button,
 input[type="color"],
 input[type="file"]::-webkit-file-upload-button
@@ -12,22 +14,22 @@ input[type="file"]::-webkit-file-upload-button
 
   outline: none;
 
-  background: hsla(var(--sf-c-input), 0.04);
-  border: 1px solid hsla(var(--sf-c-input), 0.2);
+  background: hsl(var(--sf-c-input) / 4%);
+  border: 1px solid hsl(var(--sf-c-input) / 20%);
   border-radius: var(--sf-bd-radius);
 }
 .button:focus:not(:disabled),
 input[type="color"]:focus:not(:disabled),
 input[type="file"]:focus:not(:disabled)::-webkit-file-upload-button
 {
-  box-shadow: 0 0 2px hsla(var(--sf-c-info), 1);
-  border-color: hsla(var(--sf-c-info), 0.4);
+  box-shadow: 0 0 2px hsl(var(--sf-c-info));
+  border-color: hsl(var(--sf-c-info) / 40%);
 }
 .button:hover:not(:disabled),
 input[type="color"]:hover:not(:disabled),
 input[type="file"]:hover:not(:disabled)::-webkit-file-upload-button
 {
-  background: hsla(var(--sf-c-input), 0.1);
+  background: hsl(var(--sf-c-input) / 10%);
 }
 .button:disabled,
 input[type="color"]:disabled,
