@@ -63,3 +63,68 @@
 .switch input[type="checkbox"]:disabled {
   opacity: var(--sf-disabled);
 }
+
+.switch[multiple] {
+  grid-auto-flow: column;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+}
+.switch[multiple] .switch-toggle {
+  gap: 0;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 1px 2px 8px 0 hsl(var(--sf-c-input) / 15%);
+}
+.switch[multiple] .switch-toggle label {
+  position: relative;
+}
+.switch[multiple] .switch-toggle span {
+  cursor: pointer;
+
+  display: grid;
+  align-items: center;
+  justify-content: center;
+
+  font-size: var(--sf-txt-small);
+
+  min-width: 2rem;
+
+  padding-block: var(--sf-p-input-block);
+  padding-inline: var(--sf-p-input-inline);
+
+  background: hsl(var(--sf-c-input) / 5%);
+}
+.switch[multiple] input[type="radio"] {
+  top: 0;
+  left: 0;
+  position: absolute;
+  appearance: none;
+
+  background: none;
+  outline: none;
+  border: 0;
+
+  width: 0;
+  height: 0;
+
+  margin: 0;
+  padding: 0;
+
+  opacity: 0;
+
+  overflow: hidden;
+}
+.switch[multiple] input[type="radio"]::before,
+.switch[multiple] input[type="radio"]::after {
+  border: 0;
+}
+.switch[multiple] input[type="radio"]:disabled ~ span {
+  background: hsl(var(--sf-c-input) / 5%);
+  opacity: var(--sf-disabled);
+}
+.switch[multiple] input[type="radio"]:checked ~ span {
+  color: hsl(var(--sf-c-white));
+  background: hsl(var(--sf-c-info));
+}
