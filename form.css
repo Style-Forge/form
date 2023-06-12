@@ -1,4 +1,4 @@
-/*! style-forge.form v1.1.0 | MIT License | github.com/sarmaged/style-forge.form */
+/*! style-forge.form v1.1.1 | MIT License | github.com/sarmaged/style-forge.form */
 
 :root {
   --sf-txt: 1rem;
@@ -210,7 +210,7 @@ input.small { height: calc(var(--sf-input-height) * 0.75) }
   border-radius: var(--sf-bd-radius);
 }
 
-input[type="search"] {
+.input input[type="search"] {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -463,11 +463,11 @@ input[type="file"]::-webkit-file-upload-button {
   line-height: 1;
 }
 
-input[type="time"],
-input[type="week"],
-input[type="month"],
-input[type="date"],
-input[type="datetime-local"]
+.input input[type="time"],
+.input input[type="week"],
+.input input[type="month"],
+.input input[type="date"],
+.input input[type="datetime-local"]
 {
   -webkit-appearance: none;
      -moz-appearance: none;
