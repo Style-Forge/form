@@ -1,8 +1,8 @@
-input[type="time"],
-input[type="week"],
-input[type="month"],
-input[type="date"],
-input[type="datetime-local"]
+.input input[type="time"],
+.input input[type="week"],
+.input input[type="month"],
+.input input[type="date"],
+.input input[type="datetime-local"]
 {
   appearance: none;
   padding-block: 1em 0.5em;
