@@ -1,4 +1,4 @@
-/*! style-forge.form v1.2.0 | MIT License | github.com/sarmaged/style-forge.form */
+/*! style-forge.form v1.2.1 | MIT License | github.com/sarmaged/style-forge.form */
 
 :root {
   --sf-txt: 1rem;
@@ -588,7 +588,7 @@ input[type="file"]::-webkit-file-upload-button {
   background: hsl(var(--sf-c-input) / 5%);
 }
 
-.switch[multiple] input[type="radio"] {
+.switch[multiple] input:is([type="checkbox"], [type="radio"]) {
   top: 0;
   left: 0;
   position: absolute;
@@ -611,17 +611,18 @@ input[type="file"]::-webkit-file-upload-button {
   overflow: hidden;
 }
 
-.switch[multiple] input[type="radio"]::before,
-.switch[multiple] input[type="radio"]::after {
-  border: 0;
+.switch[multiple] input:is([type="checkbox"], [type="radio"])::before,
+.switch[multiple] input:is([type="checkbox"], [type="radio"])::after {
+  content: none;
 }
 
-.switch[multiple] input[type="radio"]:disabled ~ span {
+.switch[multiple] input:is([type="checkbox"], [type="radio"]):disabled ~ span {
+  cursor: not-allowed;
   background: hsl(var(--sf-c-input) / 5%);
   opacity: var(--sf-disabled);
 }
 
-.switch[multiple] input[type="radio"]:checked ~ span {
+.switch[multiple] input:is([type="checkbox"], [type="radio"]):checked ~ span {
   color: hsl(var(--sf-c-white));
   background: hsl(var(--sf-c-info));
 }
