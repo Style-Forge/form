@@ -18,23 +18,36 @@
   --sf-c-input: 0 0% 10%;
   --sf-c-loading: 0 0% 10%;
   --sf-c-txt: 0 0% 10%;
+
+  /* colors for dark theme */
+  --sf-dark-c-white: 0 0% 100%;
+
+  --sf-dark-c-error: 330 100% 71%;
+  --sf-dark-c-info: 219 79% 66%;
+  --sf-dark-c-input: 0 0% 100%;
+  --sf-dark-c-loading: 0 0% 100%;
+  --sf-dark-c-txt: 0 0% 90%;
 }
 
 :root[data-theme="dark"] {
-  --sf-c-error: 330 100% 71%;
-  --sf-c-info: 219 79% 66%;
-  --sf-c-input: 0 0% 100%;
-  --sf-c-loading: 0 0% 100%;
-  --sf-c-txt: 0 0% 90%;
+  --sf-c-white: var(--sf-dark-c-white);
+
+  --sf-c-error: var(--sf-dark-c-error);
+  --sf-c-info: var(--sf-dark-c-info);
+  --sf-c-input: var(--sf-dark-c-input);
+  --sf-c-loading: var(--sf-dark-c-loading);
+  --sf-c-txt: var(--sf-dark-c-txt);
 }
 
 @media (prefers-color-scheme: dark) {
   :root[data-theme="auto"],
   :root[data-theme="dark"] {
-    --sf-c-error: 330 100% 71%;
-    --sf-c-info: 219 79% 66%;
-    --sf-c-input: 0 0% 100%;
-    --sf-c-loading: 0 0% 100%;
-    --sf-c-txt: 0 0% 90%;
+    --sf-c-white: var(--sf-dark-c-white);
+
+    --sf-c-error: var(--sf-dark-c-error);
+    --sf-c-info: var(--sf-dark-c-info);
+    --sf-c-input: var(--sf-dark-c-input);
+    --sf-c-loading: var(--sf-dark-c-loading);
+    --sf-c-txt: var(--sf-dark-c-txt);
   }
 }
