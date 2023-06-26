@@ -1,53 +1,57 @@
 :root {
-  --sf-txt: 1rem;
-  --sf-txt-small: 0.75rem;
+  --sf-form-txt: 1rem;
+  --sf-form-txt-small: 0.75rem;
 
-  --sf-input-height: 2.5em;
+  --sf-form-input-height: 2.5em;
 
-  --sf-p-input-block: 0.5em;
-  --sf-p-input-inline: 0.5em;
+  --sf-form-p-input-block: 0.5em;
+  --sf-form-p-input-inline: 0.5em;
 
-  --sf-disabled: 0.4;
+  --sf-form-disabled: 0.4;
 
-  --sf-bd-radius: 5px;
+  --sf-form-bd-radius: 5px;
 
-  --sf-c-white: 0 0% 100%;
+  --sf-form-c-white: 0 0% 100%;
 
-  --sf-c-error: 0 100% 60%;
-  --sf-c-info: 200 100% 60%;
-  --sf-c-input: 0 0% 10%;
-  --sf-c-loading: 0 0% 10%;
-  --sf-c-txt: 0 0% 10%;
+  --sf-form-c-bg: 0 0% 100%;
+  --sf-form-c-error: 0 100% 60%;
+  --sf-form-c-info: 200 100% 60%;
+  --sf-form-c-input: 0 0% 10%;
+  --sf-form-c-loading: 0 0% 10%;
+  --sf-form-c-txt: 0 0% 10%;
 
   /* colors for dark theme */
-  --sf-dark-c-white: 0 0% 100%;
+  --sf-form-dark-c-white: 0 0% 100%;
 
-  --sf-dark-c-error: 330 100% 71%;
-  --sf-dark-c-info: 219 79% 66%;
-  --sf-dark-c-input: 0 0% 100%;
-  --sf-dark-c-loading: 0 0% 100%;
-  --sf-dark-c-txt: 0 0% 90%;
+  --sf-form-dark-c-bg: 0 0% 10%;
+  --sf-form-dark-c-error: 330 100% 71%;
+  --sf-form-dark-c-info: 219 79% 66%;
+  --sf-form-dark-c-input: 0 0% 100%;
+  --sf-form-dark-c-loading: 0 0% 100%;
+  --sf-form-dark-c-txt: 0 0% 90%;
 }
 
 :root[data-theme="dark"] {
-  --sf-c-white: var(--sf-dark-c-white);
+  --sf-form-c-white: var(--sf-form-dark-c-white);
 
-  --sf-c-error: var(--sf-dark-c-error);
-  --sf-c-info: var(--sf-dark-c-info);
-  --sf-c-input: var(--sf-dark-c-input);
-  --sf-c-loading: var(--sf-dark-c-loading);
-  --sf-c-txt: var(--sf-dark-c-txt);
+  --sf-form-c-bg: var(--sf-form-dark-c-bg);
+  --sf-form-c-error: var(--sf-form-dark-c-error);
+  --sf-form-c-info: var(--sf-form-dark-c-info);
+  --sf-form-c-input: var(--sf-form-dark-c-input);
+  --sf-form-c-loading: var(--sf-form-dark-c-loading);
+  --sf-form-c-txt: var(--sf-form-dark-c-txt);
 }
 
 @media (prefers-color-scheme: dark) {
   :root[data-theme="auto"],
   :root[data-theme="dark"] {
-    --sf-c-white: var(--sf-dark-c-white);
+    --sf-form-c-white: var(--sf-form-dark-c-white);
 
-    --sf-c-error: var(--sf-dark-c-error);
-    --sf-c-info: var(--sf-dark-c-info);
-    --sf-c-input: var(--sf-dark-c-input);
-    --sf-c-loading: var(--sf-dark-c-loading);
-    --sf-c-txt: var(--sf-dark-c-txt);
+    --sf-form-c-bg: var(--sf-form-dark-c-bg);
+    --sf-form-c-error: var(--sf-form-dark-c-error);
+    --sf-form-c-info: var(--sf-form-dark-c-info);
+    --sf-form-c-input: var(--sf-form-dark-c-input);
+    --sf-form-c-loading: var(--sf-form-dark-c-loading);
+    --sf-form-c-txt: var(--sf-form-dark-c-txt);
   }
 }

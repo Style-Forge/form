@@ -1,64 +1,64 @@
-input.small { height: calc(var(--sf-input-height) * 0.75) }
+input.small { height: calc(var(--sf-form-input-height) * 0.75) }
 
 .input {
   position: relative;
-
-  display: grid;
 }
 .input input {
+  position: relative;
   z-index: 1;
 
-  color: hsl(var(--sf-c-txt));
+  color: hsl(var(--sf-form-c-txt));
 
-  height: var(--sf-input-height);
-  padding-block: var(--sf-p-input-block);
-  padding-inline: var(--sf-p-input-inline);
+  height: var(--sf-form-input-height);
+  padding-block: var(--sf-form-p-input-block);
+  padding-inline: var(--sf-form-p-input-inline);
 
   border: 0;
   background: none;
   outline: none;
 
+  width: 100%;
+
   transition: color 0.1s ease-out;
 
-  border-radius: var(--sf-bd-radius);
+  border-radius: var(--sf-form-bd-radius);
 }
 .input label {
   top: 0;
-  left: var(--sf-p-input-inline);
+  left: var(--sf-form-p-input-inline);
   right: auto;
   bottom: 0;
   position: absolute;
-
-  z-index: 0;
+  z-index: 1;
 
   margin: auto;
   height: min-content;
 
   pointer-events: none;
 
-  font-size: var(--sf-txt);
+  font-size: var(--sf-form-txt);
 
-  color: hsl(var(--sf-c-txt) / 40%);
+  color: hsl(var(--sf-form-c-txt) / 40%);
 
   transition: 0.1s ease-out;
   transition-property: font-size, top;
 }
 
 .error:not(.input) {
-  font-size: var(--sf-txt-small);
+  font-size: var(--sf-form-txt-small);
   margin-block-end: 1em;
 }
 
 .input input:focus ~ label
-{ color: hsl(var(--sf-c-info)) }
+{ color: hsl(var(--sf-form-c-info)) }
 
 .error
-{ color: hsl(var(--sf-c-error)) }
+{ color: hsl(var(--sf-form-c-error)) }
 
 .input input:required ~ label::before {
   content: '*';
   font-size: 1rem;
-  color: hsl(var(--sf-c-error));
+  color: hsl(var(--sf-form-c-error));
   margin-inline-end: 0.5ex;
 }
 
@@ -68,8 +68,8 @@ input.small { height: calc(var(--sf-input-height) * 0.75) }
 .input input:focus:not(:read-only) ~ label,
 .input input:not(:placeholder-shown) ~ label
 {
-  top: calc(var(--sf-p-input-block) * -6);
-  font-size: var(--sf-txt-small);
+  top: calc(var(--sf-form-p-input-block) * -6);
+  font-size: var(--sf-form-txt-small);
 }
 
 .input input ~ .shape {
@@ -78,11 +78,13 @@ input.small { height: calc(var(--sf-input-height) * 0.75) }
   right: 0;
   bottom: 0;
   position: absolute;
+  z-index: 0;
 
   content: "";
 
-  border: 1px solid hsl(var(--sf-c-input) / 20%);
-  border-radius: var(--sf-bd-radius);
+  background: hsl(var(--sf-form-c-bg) / 20%);
+  border: 1px solid hsl(var(--sf-form-c-input) / 20%);
+  border-radius: var(--sf-form-bd-radius);
 
   transition: border 0.1s ease-out;
 }
@@ -94,25 +96,25 @@ input.small { height: calc(var(--sf-input-height) * 0.75) }
   border-color: transparent;
 }
 
-.input input:not(:placeholder-shown) ~ .shape { border-bottom-color: hsl(var(--sf-c-input) / 20%) }
-.input input:focus ~ .shape { border-bottom-color: hsl(var(--sf-c-info)) }
+.input input:not(:placeholder-shown) ~ .shape { border-bottom-color: hsl(var(--sf-form-c-input) / 20%) }
+.input input:focus ~ .shape { border-bottom-color: hsl(var(--sf-form-c-info)) }
 
 .input input:read-only,
 .input input:disabled
 {
-  color: hsl(var(--sf-c-txt));
-  text-fill-color: hsl(var(--sf-c-txt));
-  opacity: var(--sf-disabled);
+  color: hsl(var(--sf-form-c-txt));
+  text-fill-color: hsl(var(--sf-form-c-txt));
+  opacity: var(--sf-form-disabled);
 }
 .input input:read-only ~ label,
 .input input:disabled ~ label
 {
-  color: hsl(var(--sf-c-txt) / 40%);
+  color: hsl(var(--sf-form-c-txt) / 40%);
 }
 .input input:read-only ~ .shape,
 .input input:disabled ~ .shape
 {
-  background: hsl(var(--sf-c-input) / 5%);
+  background: hsl(var(--sf-form-c-input) / 5%);
   border-color: transparent;
-  border-radius: var(--sf-bd-radius);
+  border-radius: var(--sf-form-bd-radius);
 }

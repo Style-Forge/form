@@ -1,25 +1,25 @@
 textarea.textarea {
   appearance: none;
-  color: hsl(var(--sf-c-txt));
+  color: hsl(var(--sf-form-c-txt));
 
   resize: vertical;
   line-height: 1.5;
 
-  padding-block: var(--sf-p-input-block);
-  padding-inline: var(--sf-p-input-inline);
+  padding-block: var(--sf-form-p-input-block);
+  padding-inline: var(--sf-form-p-input-inline);
 
-  border: 1px solid hsl(var(--sf-c-input) / 20%);
-  background: none;
+  border: 1px solid hsl(var(--sf-form-c-input) / 20%);
+  background: hsl(var(--sf-form-c-bg) / 20%);
   outline: none;
 
-  min-height: calc(7em + var(--sf-p-input-block) / 4);
+  min-height: calc(7em + var(--sf-form-p-input-block) / 4);
 
-  border-radius: var(--sf-bd-radius);
+  border-radius: var(--sf-form-bd-radius);
 }
 
 textarea.textarea:read-only,
 textarea.textarea:disabled {
-  background: hsl(var(--sf-c-input) / 5%);
+  background: hsl(var(--sf-form-c-input) / 5%);
   border-color: transparent;
 }
 
@@ -27,4 +27,4 @@ textarea.textarea:disabled {
   resize: none;
 }
 
-textarea.textarea:focus { border-color: hsl(var(--sf-c-info)) }
+textarea.textarea:focus { border-color: hsl(var(--sf-form-c-info)) }

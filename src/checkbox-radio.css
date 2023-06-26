@@ -42,7 +42,8 @@
   height: 1em;
   content: '';
 
-  border: 1px solid hsl(var(--sf-c-input) / 20%);
+  background: hsl(var(--sf-form-c-bg) / 20%);
+  border: 1px solid hsl(var(--sf-form-c-input) / 20%);
 }
 .radio input[type="radio"]::after,
 .checkbox input[type="checkbox"]::after
@@ -59,17 +60,17 @@
 .radio input[type="radio"]:checked::before,
 .checkbox input[type="checkbox"]:checked::before
 {
-  border-color: hsl(var(--sf-c-info));
+  border-color: hsl(var(--sf-form-c-info));
 }
 .radio input[type="radio"]:checked::after,
 .checkbox input[type="checkbox"]:checked::after
 {
-  background: hsl(var(--sf-c-info));
+  background: hsl(var(--sf-form-c-info));
 }
 .radio input[type="radio"]:disabled,
 .checkbox input[type="checkbox"]:disabled
 {
-  opacity: var(--sf-disabled);
+  opacity: var(--sf-form-disabled);
 }
 .radio input[type="radio"]::before,
 .radio input[type="radio"]::after

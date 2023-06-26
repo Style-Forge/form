@@ -2,12 +2,13 @@ input[type="color"] {
   appearance: none;
   padding: 3px;
 
-  border: 1px solid hsl(var(--sf-c-input) / 20%);
-  border-radius: var(--sf-bd-radius);
+  background: hsl(var(--sf-form-c-bg) / 20%);
+  border: 1px solid hsl(var(--sf-form-c-input) / 20%);
+  border-radius: var(--sf-form-bd-radius);
 }
 input[type="color"]::-webkit-color-swatch-wrapper {
   padding: 0;
 }
 input[type="color"]::-webkit-color-swatch {
-  border-radius: var(--sf-bd-radius);
+  border-radius: var(--sf-form-bd-radius);
 }
