@@ -1,12 +1,12 @@
 @import 'var.css';
+@import 'global.css';
+@import 'pseudo-classes.css';
 
 @import 'input.css';
-@import 'search.css';
 @import 'button.css';
 @import 'checkbox-radio.css';
 @import 'select.css';
 @import 'textarea.css';
-@import 'range.css';
 @import 'color.css';
 @import 'file.css';
 
@@ -14,3 +14,5 @@
 @import 'switch.css';
 
 @import 'loading.css';
+
+@import 'validate.css';

@@ -1,39 +1,14 @@
-button.small { height: calc(var(--sf-form-input-height) * 0.75) }
-
-.button,
-input[type="color"],
-input[type="file"]::-webkit-file-upload-button
+input.sf-input[type='file']::file-selector-button,
+.sf-button:where(a, button, input[type='button'], input[type='submit'], input[type='reset'])
 {
-  cursor: pointer;
+  display: inline-block;
+
+  line-height: 1;
 
   color: hsl(var(--sf-form-c-txt));
-
-  padding-block: var(--sf-form-p-input-block);
-  padding-inline: var(--sf-form-p-input-inline);
-
-  outline: none;
-
   background: hsl(var(--sf-form-c-bg) / 20%);
-  border: 1px solid hsl(var(--sf-form-c-input) / 20%);
-  border-radius: var(--sf-form-bd-radius);
-}
-.button:focus:not(:disabled),
-input[type="color"]:focus:not(:disabled),
-input[type="file"]:focus:not(:disabled)::-webkit-file-upload-button
-{
-  box-shadow: 0 0 2px hsl(var(--sf-form-c-info));
-  border-color: hsl(var(--sf-form-c-info) / 40%);
-}
-.button:hover:not(:disabled),
-input[type="color"]:hover:not(:disabled),
-input[type="file"]:hover:not(:disabled)::-webkit-file-upload-button
-{
-  background: hsl(var(--sf-form-c-input) / 10%);
-}
-.button:disabled,
-input[type="color"]:disabled,
-input[type="file"]:disabled::-webkit-file-upload-button
-{
-  text-fill-color: hsl(var(--sf-form-c-txt));
-  opacity: var(--sf-form-disabled);
+  border: 1px solid hsl(var(--sf-form-c-border) / 20%);
+
+  text-align: center;
+  text-decoration: none;
 }

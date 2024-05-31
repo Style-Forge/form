@@ -1,22 +1,14 @@
 @keyframes Loading {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 28px 0;
-  }
+  from { background-position: 0 0 }
+  to { background-position: 28px 0 }
 }
 
-[loading],
-input[loading]
+a.sf-loading:not([href]),
+.sf-loading:disabled
 {
-  user-select: none;
-  pointer-events: none;
-
-  color: hsl(var(--sf-form-c-txt) / 30%);
-
   --c1: transparent;
   --c2: hsl(var(--sf-form-c-loading) / 5%);
+  background: hsl(var(--sf-form-c-info));
   background: repeating-linear-gradient(45deg, var(--c1), var(--c1) 10px, var(--c2) 10px, var(--c2) 20px);
   background-size: 28px 100%;
   animation: Loading .3s linear infinite;

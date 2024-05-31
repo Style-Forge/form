@@ -1,9 +1,22 @@
-.input input[type="time"],
-.input input[type="week"],
-.input input[type="month"],
-.input input[type="date"],
-.input input[type="datetime-local"]
+input.sf-input:is(
+  [type='time'],
+  [type='week'],
+  [type='month'],
+  [type='date'],
+  [type='datetime-local']
+)
 {
   appearance: none;
-  padding-block: 1em 0.5em;
+  text-align: start;
+  height: 37px;
+}
+
+input.sf-input:is(
+  [type='time'],
+  [type='week'],
+  [type='month'],
+  [type='date'],
+  [type='datetime-local']
+)::-webkit-date-and-time-value {
+  text-align: start;
 }
