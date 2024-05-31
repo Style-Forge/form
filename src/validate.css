@@ -1,0 +1,110 @@
+.sf-description,
+.sf-invalid,
+.sf-valid
+{
+  display: none;
+  color: hsl(var(--sf-form-c-txt) / 40%);
+  font-size: var(--sf-txt-small);
+  margin: 0 0 var(--sf-gap)
+}
+
+.sf-description { display: block }
+
+:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > .validates + .sf-description,
+:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > .validates + .sf-valid + .sf-description,
+:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > .validates + .sf-invalid + .sf-description,
+:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > .validates + .sf-valid + .sf-invalid + .sf-description,
+:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > .validates + .sf-invalid + .sf-valid + .sf-description,
+
+:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > .validates + .sf-invalid,
+:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > .validates + .sf-valid + .sf-invalid,
+:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > .validates + .sf-description + .sf-invalid,
+:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > .validates + .sf-valid + .sf-description + .sf-invalid,
+:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > .validates + .sf-description + .sf-valid + .sf-invalid,
+
+:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > .validates + .sf-valid,
+:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > .validates + .sf-invalid + .sf-valid,
+:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > .validates + .sf-description + .sf-valid,
+:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > .validates + .sf-invalid + .sf-description + .sf-valid,
+:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > .validates + .sf-description + .sf-invalid + .sf-valid
+{ margin: var(--sf-gap) 0 }
+
+.sf-invalid { color: hsl(var(--sf-form-c-error)) }
+.sf-valid:not(.sf-description) { color: hsl(var(--sf-form-c-txt)) }
+
+.show:is(.sf-description, .sf-invalid, .sf-valid)
+{ display: block }
+
+.hide:is(.sf-description, .sf-invalid, .sf-valid)
+{ display: none }
+
+.error:not(:disabled) + .sf-invalid,
+.error:not(:disabled) + .sf-valid + .sf-invalid,
+.error:not(:disabled) + .sf-description + .sf-invalid,
+.error:not(:disabled) + .sf-valid + .sf-description + .sf-invalid,
+.error:not(:disabled) + .sf-description + .sf-valid + .sf-invalid
+{ display: block }
+
+.error + .sf-valid,
+.error + .sf-invalid + .sf-valid,
+.error + .sf-description + .sf-valid,
+.error + .sf-invalid + .sf-description + .sf-valid,
+.error + .sf-description + .sf-invalid + .sf-valid,
+
+.error + .sf-description,
+.error + .sf-valid + .sf-description,
+.error + .sf-invalid + .sf-description,
+.error + .sf-valid + .sf-invalid + .sf-description,
+.error + .sf-invalid + .sf-valid + .sf-description
+{ display: none }
+
+.validates:where(:invalid:focus, :invalid:not(:placeholder-shown)) + .sf-invalid,
+.validates:where(:invalid:focus, :invalid:not(:placeholder-shown)) + .sf-valid + .sf-invalid,
+.validates:where(:invalid:focus, :invalid:not(:placeholder-shown)) + .sf-description + .sf-invalid,
+.validates:where(:invalid:focus, :invalid:not(:placeholder-shown)) + .sf-valid + .sf-description + .sf-invalid,
+.validates:where(:invalid:focus, :invalid:not(:placeholder-shown)) + .sf-description + .sf-valid + .sf-invalid,
+
+.validates:where(:valid:focus, :valid:not(:placeholder-shown)) + .sf-valid,
+.validates:where(:valid:focus, :valid:not(:placeholder-shown)) + .sf-invalid + .sf-valid,
+.validates:where(:valid:focus, :valid:not(:placeholder-shown)) + .sf-description + .sf-valid,
+.validates:where(:valid:focus, :valid:not(:placeholder-shown)) + .sf-invalid + .sf-description + .sf-valid,
+.validates:where(:valid:focus, :valid:not(:placeholder-shown)) + .sf-description + .sf-invalid + .sf-valid,
+
+.validates:where(:valid:focus, :valid:not(:placeholder-shown)) + .sf-description.sf-valid,
+.validates:where(:valid:focus, :valid:not(:placeholder-shown)) + .sf-invalid + .sf-description.sf-valid
+{ display: block }
+
+.validates:where(:focus, :not(:placeholder-shown)) + .sf-description,
+.validates:where(:focus, :not(:placeholder-shown)) + .sf-invalid + .sf-description,
+.validates:where(:focus, :not(:placeholder-shown)) + .sf-valid + .sf-description,
+.validates:where(:focus, :not(:placeholder-shown)) + .sf-invalid + .sf-valid + .sf-description,
+.validates:where(:focus, :not(:placeholder-shown)) + .sf-valid + .sf-invalid + .sf-description
+{ display: none }
+
+.validates input[type='checkbox'] ~ .sf-description { display: none }
+.validates input[type='checkbox']:invalid ~ .sf-invalid { display: block }
+.validates input[type='checkbox']:valid ~ .sf-valid { display: block }
+
+.validates:invalid:required:not(:focus, :disabled) { border-color: hsl(var(--sf-form-c-warning)) }
+
+.validates input:is([type='radio'], [type='checkbox']):invalid::before { border-color: hsl(var(--sf-form-c-error)) }
+
+.error:not(:disabled),
+.validates:invalid:focus
+{
+  border-color: hsl(var(--sf-form-c-error));
+  outline: none;
+}
+
+input.error.sf-input:is(:focus, :not(:disabled):not(:placeholder-shown)),
+input.validates.sf-input:invalid:is(:placeholder-shown:focus, :not(:placeholder-shown))
+{ border-color: transparent transparent hsl(var(--sf-form-c-error)) }
+
+label.validates:is(.sf-switch, .sf-checkbox) input[type='checkbox'] ~ :is(.sf-invalid, .sf-valid) { margin: var(--sf-gap) 0 }
+
+form.validates:invalid .sf-button[type='submit'] {
+  cursor: not-allowed;
+  text-decoration: none;
+  opacity: var(--sf-disabled);
+  -webkit-text-fill-color: hsl(var(--sf-form-c-txt));
+}
