@@ -1,7 +1,8 @@
 {
   "name": "style-forge.form",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "Form CSS for style-forge",
+  "type": "module",
   "main": "form.css",
   "repository": "github:sarmaged/style-forge.form",
   "author": "Sarmaged <sarmaged@gmail.com>",
@@ -13,6 +14,7 @@
     "select",
     "switch",
     "textarea",
+    "validate",
     "html",
     "css"
   ],
