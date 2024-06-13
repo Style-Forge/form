@@ -8,7 +8,7 @@
 
 ## Description
 
-The `style-forge.form` package is a versatile and easy-to-use library designed to streamline the creation and management of forms in web applications. It offers a robust set of tools to handle form validation, styling, and submission processes, enhancing user experience and developer productivity.
+`Style-Forge.Form` package is a versatile and easy-to-use library designed to streamline the creation and management of forms in web applications. It offers a robust set of tools to handle form validation, styling, and submission processes, enhancing user experience and developer productivity.
 
 ## Installation
 
