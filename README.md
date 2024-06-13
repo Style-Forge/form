@@ -4,7 +4,7 @@
 ![npm](https://img.shields.io/npm/v/style-forge.form)
 ![npm](https://img.shields.io/npm/dm/style-forge.form)
 ![license](https://img.shields.io/npm/l/style-forge.form)
-![build](https://github.com/yourusername/style-forge.form/actions/workflows/publish.yml/badge.svg)
+![build](https://github.com/sarmaged/style-forge.form/actions/workflows/publish.yml/badge.svg)
 
 ## Description
 
