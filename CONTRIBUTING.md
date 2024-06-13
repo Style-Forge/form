@@ -45,23 +45,9 @@ Thank you for your interest in contributing to the style-forge.form project! We 
 
 If you find a bug or have a feature request, please open an issue on GitHub. Provide as much detail as possible to help us understand and address the issue.
 
-## Running Tests
-
-Before submitting your changes, please run the tests to ensure everything is working correctly. You can run the tests with the following command:
-
-```bash
-npm test
-```
-
-## Documentation
-
-If you’re adding a new feature, please update the documentation to reflect your changes. Documentation is located in the `docs` directory.
-
 ## Community
 
 - Be respectful and considerate in your communications.
 - Follow the project's code of conduct.
 
 Thank you for your contributions!
-
-The style-forge.form Team
