@@ -6,35 +6,11 @@
 ![license](https://img.shields.io/npm/l/style-forge.form)
 ![build](https://github.com/Sarmaged/style-forge.form/actions/workflows/publish.yml/badge.svg)
 
-## Description
-
 `Style-Forge.Form` package is a versatile and easy-to-use library designed to streamline the creation and management of forms in web applications. It offers a robust set of tools to handle form validation, styling, and submission processes, enhancing user experience and developer productivity.
 
-## Installation
+## Description
 
-You can install the package via npm or yarn:
-
-```bash
-npm install style-forge.form
-```
-
-```bash
-yarn add style-forge.form
-```
-
-## Usage
-
-After installation, you can import the CSS file into your project:
-
-```css
-@import "style-forge.form";
-```
-
-Or, if you are using Webpack or another module bundler:
-
-```js
-import 'style-forge.form';
-```
+To check out docs, visit [style-forge.dev](https://style-forge.dev/form/)
 
 ## Contributing
 
