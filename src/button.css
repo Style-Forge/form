@@ -7,7 +7,7 @@ input.sf-input[type='file']::file-selector-button,
 
   color: hsl(var(--sf-form-c-txt));
   background: hsl(var(--sf-form-c-bg) / 20%);
-  border: 1px solid hsl(var(--sf-form-c-border) / 20%);
+  border: 1px solid hsl(var(--sf-form-c-bd) / 20%);
 
   text-align: center;
   text-decoration: none;

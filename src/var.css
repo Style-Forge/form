@@ -20,7 +20,7 @@
   --sf-form-c-warning: 39 100% 50%;
 
   --sf-form-c-bg: 0 0% 100%;
-  --sf-form-c-border: 0 0% 10%;
+  --sf-form-c-bd: 0 0% 10%;
   --sf-form-c-loading: 0 0% 10%;
   --sf-form-c-txt: 0 0% 10%;
 
@@ -32,12 +32,12 @@
   --sf-form-dark-c-warning: 39 100% 60%;
 
   --sf-form-dark-c-bg: 0 0% 20%;
-  --sf-form-dark-c-border: 0 0% 100%;
+  --sf-form-dark-c-bd: 0 0% 100%;
   --sf-form-dark-c-loading: 0 0% 100%;
   --sf-form-dark-c-txt: 0 0% 90%;
 }
 
-:root:where([data-theme='dark']) {
+:root:where([data-theme='dark'], .dark) {
   --sf-form-c-white: var(--sf-form-dark-c-white);
 
   --sf-form-c-bg: var(--sf-form-dark-c-bg);
@@ -45,13 +45,13 @@
   --sf-form-c-success: var(--sf-form-dark-c-success);
   --sf-form-c-warning: var(--sf-form-dark-c-warning);
   --sf-form-c-info: var(--sf-form-dark-c-info);
-  --sf-form-c-border: var(--sf-form-dark-c-border);
+  --sf-form-c-bd: var(--sf-form-dark-c-bd);
   --sf-form-c-loading: var(--sf-form-dark-c-loading);
   --sf-form-c-txt: var(--sf-form-dark-c-txt);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root:where([data-theme='auto']) {
+  :root:where([data-theme='auto'], .auto) {
     --sf-form-c-white: var(--sf-form-dark-c-white);
 
     --sf-form-c-bg: var(--sf-form-dark-c-bg);
@@ -59,7 +59,7 @@
     --sf-form-c-success: var(--sf-form-dark-c-success);
     --sf-form-c-warning: var(--sf-form-dark-c-warning);
     --sf-form-c-info: var(--sf-form-dark-c-info);
-    --sf-form-c-border: var(--sf-form-dark-c-border);
+    --sf-form-c-bd: var(--sf-form-dark-c-bd);
     --sf-form-c-loading: var(--sf-form-dark-c-loading);
     --sf-form-c-txt: var(--sf-form-dark-c-txt);
   }

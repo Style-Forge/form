@@ -100,7 +100,10 @@ input.error.sf-input:is(:focus, :not(:disabled):not(:placeholder-shown)),
 input.validates.sf-input:invalid:is(:placeholder-shown:focus, :not(:placeholder-shown))
 { border-color: transparent transparent hsl(var(--sf-form-c-error)) }
 
-label.validates:is(.sf-switch, .sf-checkbox) input[type='checkbox'] ~ :is(.sf-invalid, .sf-valid) { margin: var(--sf-gap) 0 }
+label.validates:is(.sf-switch, .sf-checkbox) :is(.sf-description, .sf-valid, .sf-invalid) {
+  width: 100%;
+  line-height: 1;
+}
 
 form.validates:invalid .sf-button[type='submit'] {
   cursor: not-allowed;

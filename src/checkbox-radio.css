@@ -1,4 +1,12 @@
 label.sf-radio,
+label.sf-checkbox {
+  display: flex;
+  flex-flow: wrap row;
+  align-items: center;
+  gap: var(--sf-gap);
+}
+
+label.sf-radio,
 label.sf-checkbox
 { line-height: 1 }
 
@@ -40,17 +48,16 @@ label.sf-checkbox input[type='checkbox']::before
   content: '';
 
   background: hsl(var(--sf-form-c-bg) / 20%);
-  border: 1px solid hsl(var(--sf-form-c-border) / 20%);
+  border: 1px solid hsl(var(--sf-form-c-bd) / 20%);
 }
 label.sf-radio input[type='radio']::after,
 label.sf-checkbox input[type='checkbox']::after
 {
   top: 3px;
   left: 3px;
+  right: 3px;
+  bottom: 3px;
   position: absolute;
-
-  width: calc(1em - 6px);
-  height: calc(1em - 6px);
 
   content: '';
 }

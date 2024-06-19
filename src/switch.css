@@ -1,3 +1,13 @@
+.sf-switch {
+  display: flex;
+
+  flex-flow: wrap row;
+
+  align-items: center;
+
+  gap: var(--sf-gap);
+}
+
 label.sf-switch input[type='checkbox'] {
   position: relative;
 
@@ -11,6 +21,8 @@ label.sf-switch input[type='checkbox'] {
 
   width: calc(var(--sf-form-switch-size) * 2);
   height: var(--sf-form-switch-size);
+
+  vertical-align: middle;
 }
 label.sf-switch input[type='checkbox']::before {
   top: 0;
@@ -21,7 +33,7 @@ label.sf-switch input[type='checkbox']::before {
   height: var(--sf-form-switch-size);
   content: '';
 
-  background: hsl(var(--sf-form-c-border) / 20%);
+  background: hsl(var(--sf-form-c-bd) / 20%);
   border-radius: calc(var(--sf-form-switch-size) / 2);
 }
 label.sf-switch input[type='checkbox']::after {
@@ -43,19 +55,18 @@ label.sf-switch input[type='checkbox']::after {
 label.sf-switch input[type='checkbox']:checked::before { background: hsl(var(--sf-form-c-info)) }
 label.sf-switch input[type='checkbox']:checked::after { transform: translate3d(var(--sf-form-switch-size), 0, 0) }
 
-.sf-switch.multiple {
-  display: flex;
+.sf-switch.multiple,
+.sf-switch.multiple *,
+.sf-switch.multiple *::before,
+.sf-switch.multiple *::after
+{ box-sizing: border-box }
 
-  align-items: center;
-
-  gap: var(--sf-gap);
-}
 .sf-switch.multiple .sf-switch-toggle {
   display: flex;
   flex-flow: row;
 
   background: hsl(var(--sf-form-c-bg) / 20%);
-  box-shadow: 1px 2px 8px 0 hsl(var(--sf-form-c-border) / 15%);
+  box-shadow: 1px 2px 8px 0 hsl(var(--sf-form-c-bd) / 15%);
 }
 .sf-switch.multiple .sf-switch-toggle label { position: relative }
 .sf-switch.multiple .sf-switch-toggle span {
@@ -69,7 +80,7 @@ label.sf-switch input[type='checkbox']:checked::after { transform: translate3d(v
   padding-block: var(--sf-form-p-input-block);
   padding-inline: var(--sf-form-p-input-inline);
 
-  background: hsl(var(--sf-form-c-border) / 5%);
+  background: hsl(var(--sf-form-c-bd) / 5%);
 }
 .sf-switch.multiple input:where([type='checkbox'], [type='radio']) {
   top: 0;

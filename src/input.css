@@ -3,7 +3,7 @@ input:where(.sf-input:not([type='radio'], [type='checkbox'], [type='color'], [ty
   background: hsl(var(--sf-form-c-bg) / 20%);
 
   border: 1px solid;
-  border-color: transparent transparent hsl(var(--sf-form-c-border) / 20%);
+  border-color: transparent transparent hsl(var(--sf-form-c-bd) / 20%);
   border-radius: 0;
 
   outline: none;
@@ -15,7 +15,7 @@ input:where(.sf-input:not([type='radio'], [type='checkbox'], [type='color'], [ty
 
 :where(input.sf-input:not([type='radio'], [type='checkbox'], [type='color'], [type='file'], [type='image']))::placeholder { color: hsl(var(--sf-form-c-txt) / 40%) }
 :where(input.sf-input:not([type='radio'], [type='checkbox'], [type='color'], [type='file'], [type='image'])):placeholder-shown {
-  border-color: hsl(var(--sf-form-c-border) / 20%);
+  border-color: hsl(var(--sf-form-c-bd) / 20%);
   border-radius: var(--sf-form-radius);
 }
 
