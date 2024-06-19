@@ -50,4 +50,3 @@ jobs:
           title: "Release ${{ env.NEW_VERSION }}"
           body: "This PR updates the version to ${{ env.NEW_VERSION }} and upgrades dependencies."
           labels: release
-          add-paths: .
