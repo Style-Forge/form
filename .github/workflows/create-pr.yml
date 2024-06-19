@@ -40,10 +40,10 @@ jobs:
       - name: Build the package
         run: yarn build
 
-      - name: Commit changes
+      - name: Test
         run: |
-          git add .
-          git commit -m "Update version to ${NEW_VERSION} and upgrade dependencies"
+          git status
+          git diff
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
