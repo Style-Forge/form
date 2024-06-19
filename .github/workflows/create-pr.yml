@@ -31,7 +31,7 @@ jobs:
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
 
-      - name: Create and push new branch
+      - name: Create new branch
         run: |
           NEW_VERSION=${GITHUB_REF#refs/tags/v}
           NEW_BRANCH=release-v${NEW_VERSION}
@@ -45,12 +45,6 @@ jobs:
 
       - name: Build the package
         run: yarn build
-
-      - name: Push changes to new branch
-        run: |
-          git add .
-          git commit -m "Update version to ${NEW_VERSION} and upgrade dependencies"
-          git push origin ${NEW_BRANCH}
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
