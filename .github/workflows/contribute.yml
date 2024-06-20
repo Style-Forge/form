@@ -1,0 +1,44 @@
+name: Create PR from Contributions
+
+on:
+  push:
+    branches:
+      - feature/*
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  create-pr:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Get Git user info
+        id: git_info
+        run: |
+          COMMIT_AUTHOR_NAME=$(git log -1 --pretty=format:'%an')
+          COMMIT_AUTHOR_EMAIL=$(git log -1 --pretty=format:'%ae')
+          echo "COMMIT_AUTHOR_NAME=${COMMIT_AUTHOR_NAME}" >> $GITHUB_ENV
+          echo "COMMIT_AUTHOR_EMAIL=${COMMIT_AUTHOR_EMAIL}" >> $GITHUB_ENV
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "${{ env.COMMIT_AUTHOR_NAME }}"
+          git config --global user.email "${{ env.COMMIT_AUTHOR_EMAIL }}"
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Prepare for PR from feature branch"
+          branch: ${{ github.ref }}
+          base: main
+          title: "PR: Changes from feature branch"
+          body: "This PR contains the changes from commit ${{ github.sha }} on feature branch."
+          labels: enhancement
