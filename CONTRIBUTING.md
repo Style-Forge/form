@@ -29,6 +29,12 @@ Thank you for your interest in contributing to the style-forge.form project! We 
    git push origin feature/branch-name
    ```
 
+6. **Create a pull request**
+   - Go to the page of your forked repository on GitHub.
+   - Click the "New pull request" button.
+   - Select the base repository and branch you want to merge your changes into.
+   - Provide a clear and detailed description of your changes.
+
 ## Code Style
 
 - Please ensure your code follows the project's coding standards.

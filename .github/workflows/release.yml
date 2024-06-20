@@ -20,7 +20,8 @@ jobs:
       - name: Verify user
         run: |
           AUTHOR=$(git log -1 --pretty=format:'%an')
-          if [ "$AUTHOR" != "AUTHORIZED_USER" ]; then
+          CODEOWNERS=$(cat CODEOWNERS | grep -E '^.* @' | sed 's/.*@//g' | tr '\n' ' ')
+          if [[ ! " ${CODEOWNERS[@]} " =~ " ${AUTHOR} " ]]; then
             echo "Unauthorized user: $AUTHOR"
             exit 1
           fi
