@@ -1,4 +1,4 @@
-name: Prepare Release Branch and Create PR
+name: Release
 
 on:
   push:
@@ -10,7 +10,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  publish:
+  release:
     runs-on: ubuntu-latest
 
     steps:

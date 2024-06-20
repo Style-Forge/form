@@ -1,4 +1,4 @@
-name: Notify style-forge
+name: Notify
 
 on:
   pull_request:
