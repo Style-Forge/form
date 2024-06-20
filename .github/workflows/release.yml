@@ -16,11 +16,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0 # Ensure all branches are fetched
 
-      - name: Check status before build
-        run: git status
+      - name: Check branchs
+        run: git branch
 
       - name: Verify user
         run: |
@@ -57,34 +55,20 @@ jobs:
       - name: Build the package
         run: yarn build
 
-      - name: Test
-        run: |
-          git status
-          git diff
-
       - name: Create temporary branch and push changes
         run: |
-          git fetch origin main:main # Ensure main branch is up to date
-          git checkout main
-          git pull origin main
           TEMP_BRANCH="release-v${NEW_VERSION}"
           git checkout -b $TEMP_BRANCH
           git push origin $TEMP_BRANCH
-          git add .
           echo "TEMP_BRANCH=$TEMP_BRANCH" >> $GITHUB_ENV
-
-      - name: Test
-        run: |
-          git status
-          git diff
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "Update version to ${{ env.NEW_VERSION }} and upgrade dependencies"
-          branch: ${{ env.TEMP_BRANCH }}
-          base: release
+          branch: release
+          base: ${{ env.TEMP_BRANCH }}
           title: "Release ${{ env.NEW_VERSION }}"
           body: "This PR updates the version to ${{ env.NEW_VERSION }} and upgrades dependencies."
           labels: release
