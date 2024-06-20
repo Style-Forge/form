@@ -1,5 +1,3 @@
-/* test 3 */
-
 :where(button, input, optgroup, option, select, textarea),
 :where(button, input, optgroup, option, select, textarea)::before,
 :where(button, input, optgroup, option, select, textarea)::after
