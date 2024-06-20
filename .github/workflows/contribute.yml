@@ -24,13 +24,18 @@ jobs:
         run: |
           COMMIT_AUTHOR_NAME=$(git log -1 --pretty=format:'%an')
           COMMIT_AUTHOR_EMAIL=$(git log -1 --pretty=format:'%ae')
-          echo "COMMIT_AUTHOR_NAME=${COMMIT_AUTHOR_NAME}" >> $GITHUB_ENV
-          echo "COMMIT_AUTHOR_EMAIL=${COMMIT_AUTHOR_EMAIL}" >> $GITHUB_ENV
+          if [ "${COMMIT_AUTHOR_NAME}" = "Sarmaged" ]; then
+            echo "GIT_USER_NAME=github-actions" >> $GITHUB_ENV
+            echo "GIT_USER_EMAIL=github-actions@github.com" >> $GITHUB_ENV
+          else
+            echo "GIT_USER_NAME=${COMMIT_AUTHOR_NAME}" >> $GITHUB_ENV
+            echo "GIT_USER_EMAIL=${COMMIT_AUTHOR_EMAIL}" >> $GITHUB_ENV
+          fi
 
       - name: Configure Git
         run: |
-          git config --global user.name "${{ env.COMMIT_AUTHOR_NAME }}"
-          git config --global user.email "${{ env.COMMIT_AUTHOR_EMAIL }}"
+          git config --global user.name "${{ env.GIT_USER_NAME }}"
+          git config --global user.email "${{ env.GIT_USER_EMAIL }}"
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
