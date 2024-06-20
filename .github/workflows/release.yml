@@ -20,7 +20,7 @@ jobs:
       - name: Verify user
         run: |
           AUTHOR=$(git log -1 --pretty=format:'%an')
-          CODEOWNERS=$(cat CODEOWNERS | grep -E '^.* @' | sed 's/.*@//g' | tr '\n' ' ')
+          CODEOWNERS=$(cat .github/CODEOWNERS | grep -E '^.* @' | sed 's/.*@//g' | tr '\n' ' ')
           if [[ ! " ${CODEOWNERS[@]} " =~ " ${AUTHOR} " ]]; then
             echo "Unauthorized user: $AUTHOR"
             exit 1
