@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Ensure all branches are fetched
 
       - name: Check status before build
         run: git status
@@ -62,6 +64,7 @@ jobs:
 
       - name: Create temporary branch and push changes
         run: |
+          git fetch origin main:main # Ensure main branch is up to date
           git checkout main
           git pull origin main
           TEMP_BRANCH="release-v${NEW_VERSION}"
