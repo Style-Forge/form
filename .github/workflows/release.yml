@@ -17,18 +17,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Check branchs
-        run: git branch
-
-      - name: Verify user
-        run: |
-          AUTHOR=$(git log -1 --pretty=format:'%an')
-          CODEOWNERS=$(cat .github/CODEOWNERS | grep -E '^.* @' | sed 's/.*@//g' | tr '\n' ' ')
-          if [[ ! " ${CODEOWNERS[@]} " =~ " ${AUTHOR} " ]]; then
-            echo "Unauthorized user: $AUTHOR"
-            exit 1
-          fi
-
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -43,32 +31,33 @@ jobs:
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
 
-      - name: Check status after build
-        run: git status
-
-      - name: Update version in package.json
+      - name: Create and push new branch
         run: |
           NEW_VERSION=${GITHUB_REF#refs/tags/v}
-          jq --arg new_version "$NEW_VERSION" '.version = $new_version' package.json > temp.json && mv temp.json package.json
+          NEW_BRANCH=release-v${NEW_VERSION}
+          git checkout -b ${NEW_BRANCH}
           echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_ENV
+          echo "NEW_BRANCH=$NEW_BRANCH" >> $GITHUB_ENV
+
+      - name: Update version in package.json
+        run: jq --arg new_version "$NEW_VERSION" '.version = $new_version' package.json > temp.json && mv temp.json package.json
 
       - name: Build the package
         run: yarn build
 
-      - name: Create temporary branch and push changes
+      - name: Commit and push changes
         run: |
-          TEMP_BRANCH="release-v${NEW_VERSION}"
-          git checkout -b $TEMP_BRANCH
-          git push origin $TEMP_BRANCH
-          echo "TEMP_BRANCH=$TEMP_BRANCH" >> $GITHUB_ENV
+          git add .
+          git commit -m "Update version to $NEW_VERSION and upgrade dependencies"
+          git push origin ${NEW_BRANCH}
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "Update version to ${{ env.NEW_VERSION }} and upgrade dependencies"
-          branch: release
-          base: ${{ env.TEMP_BRANCH }}
+          branch: ${{ env.NEW_BRANCH }}
+          base: main
           title: "Release ${{ env.NEW_VERSION }}"
           body: "This PR updates the version to ${{ env.NEW_VERSION }} and upgrades dependencies."
           labels: release
