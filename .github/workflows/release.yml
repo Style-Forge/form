@@ -62,12 +62,19 @@ jobs:
 
       - name: Create temporary branch and push changes
         run: |
+          git checkout main
+          git pull origin main
           TEMP_BRANCH="release-v${NEW_VERSION}"
           git checkout -b $TEMP_BRANCH
           git add .
           git commit -m "Update version to $NEW_VERSION and upgrade dependencies"
           git push origin $TEMP_BRANCH
           echo "TEMP_BRANCH=$TEMP_BRANCH" >> $GITHUB_ENV
+
+      - name: Test
+        run: |
+          git status
+          git diff
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
