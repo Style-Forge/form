@@ -53,8 +53,6 @@ jobs:
         run: |
           TEMP_BRANCH="release-v${NEW_VERSION}"
           git checkout -b $TEMP_BRANCH
-          git add .
-          git commit -m "Update version to $NEW_VERSION and upgrade dependencies"
           git push origin $TEMP_BRANCH
           echo "TEMP_BRANCH=$TEMP_BRANCH" >> $GITHUB_ENV
 
