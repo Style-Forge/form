@@ -14,6 +14,7 @@ jobs:
         id: determine_version
         run: |
           COMMIT_MESSAGE=$(git log -1 --pretty=format:%B)
+          echo "Commit message: $COMMIT_MESSAGE"
           if [[ "$COMMIT_MESSAGE" == *"[major]"* ]]; then
             echo "update_type=major" >> $GITHUB_ENV
           elif [[ "$COMMIT_MESSAGE" == *"[minor]"* ]]; then
@@ -21,6 +22,7 @@ jobs:
           else
             echo "update_type=patch" >> $GITHUB_ENV
           fi
+          echo "Determined update type: ${{ env.update_type }}"
 
       - name: Send notification to style-forge
         run: |
