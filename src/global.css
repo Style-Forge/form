@@ -4,8 +4,7 @@ input:where(.sf-input:not([type='radio'], [type='checkbox'], [type='color'], [ty
 select.sf-select,
 textarea.sf-textarea
 {
-  padding-block: var(--sf-form-p-input-block);
-  padding-inline: var(--sf-form-p-input-inline);
+  padding: var(--sf-form-p-input-block) var(--sf-form-p-input-inline);
 }
 
 input.sf-input[type='file']::file-selector-button,

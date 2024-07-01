@@ -4,29 +4,43 @@
 {
   display: none;
   color: hsl(var(--sf-form-c-txt) / 40%);
+
   font-size: var(--sf-txt-small);
-  margin: 0 0 var(--sf-gap)
+  font-family: inherit;
+  font-weight: 400;
+  line-height: 1;
+
+  text-transform: none;
+
+  margin: 0 0 var(--sf-gap);
+}
+
+.validates + .sf-description,
+.validates + .sf-invalid,
+.validates + .sf-valid
+{
+  margin: 0 0 var(--sf-gap);
 }
 
 .sf-description { display: block }
 
-:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > .validates + .sf-description,
-:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > .validates + .sf-valid + .sf-description,
-:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > .validates + .sf-invalid + .sf-description,
-:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > .validates + .sf-valid + .sf-invalid + .sf-description,
-:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > .validates + .sf-invalid + .sf-valid + .sf-description,
+:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > :where(.validates, .error) + .sf-description,
+:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > :where(.validates, .error) + .sf-valid + .sf-description,
+:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > :where(.validates, .error) + .sf-invalid + .sf-description,
+:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > :where(.validates, .error) + .sf-valid + .sf-invalid + .sf-description,
+:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > :where(.validates, .error) + .sf-invalid + .sf-valid + .sf-description,
 
-:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > .validates + .sf-invalid,
-:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > .validates + .sf-valid + .sf-invalid,
-:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > .validates + .sf-description + .sf-invalid,
-:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > .validates + .sf-valid + .sf-description + .sf-invalid,
-:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > .validates + .sf-description + .sf-valid + .sf-invalid,
+:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > :where(.validates, .error) + .sf-invalid,
+:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > :where(.validates, .error) + .sf-valid + .sf-invalid,
+:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > :where(.validates, .error) + .sf-description + .sf-invalid,
+:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > :where(.validates, .error) + .sf-valid + .sf-description + .sf-invalid,
+:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > :where(.validates, .error) + .sf-description + .sf-valid + .sf-invalid,
 
-:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > .validates + .sf-valid,
-:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > .validates + .sf-invalid + .sf-valid,
-:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > .validates + .sf-description + .sf-valid,
-:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > .validates + .sf-invalid + .sf-description + .sf-valid,
-:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > .validates + .sf-description + .sf-invalid + .sf-valid
+:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > :where(.validates, .error) + .sf-valid,
+:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > :where(.validates, .error) + .sf-invalid + .sf-valid,
+:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > :where(.validates, .error) + .sf-description + .sf-valid,
+:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > :where(.validates, .error) + .sf-invalid + .sf-description + .sf-valid,
+:not(.d\:f, .d\:f\:x, .d\:f\:y, .d\:g, .d\:g\:x, .d\:g\:y) > :where(.validates, .error) + .sf-description + .sf-invalid + .sf-valid
 { margin: var(--sf-gap) 0 }
 
 .sf-invalid { color: hsl(var(--sf-form-c-error)) }

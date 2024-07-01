@@ -12,3 +12,33 @@ input.sf-input[type='file']::file-selector-button,
   text-align: center;
   text-decoration: none;
 }
+
+a.sf-button
+{
+  appearance: auto;
+
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: 400;
+
+  text-transform: none;
+
+  touch-action: manipulation;
+
+  color: hsl(var(--sf-form-c-txt));
+  background: hsl(var(--sf-form-c-bg) / 20%);
+  border: 1px solid hsl(var(--sf-form-c-bd) / 20%);
+
+  text-align: center;
+  text-decoration: none;
+}
+
+a.sf-button:not([href]) {
+  cursor: not-allowed;
+  text-decoration: none;
+  opacity: var(--sf-disabled);
+  -webkit-tap-highlight-color: transparent;
+}
+a.sf-button:not([href]):hover {
+  color: inherit;
+}

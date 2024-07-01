@@ -55,6 +55,10 @@ label.sf-switch input[type='checkbox']::after {
 label.sf-switch input[type='checkbox']:checked::before { background: hsl(var(--sf-form-c-info)) }
 label.sf-switch input[type='checkbox']:checked::after { transform: translate3d(var(--sf-form-switch-size), 0, 0) }
 
+label.sf-switch input[type='radio'] ~ *,
+label.sf-switch input[type='checkbox'] ~ *
+{ cursor: pointer }
+
 .sf-switch.multiple,
 .sf-switch.multiple *,
 .sf-switch.multiple *::before,
@@ -77,8 +81,7 @@ label.sf-switch input[type='checkbox']:checked::after { transform: translate3d(v
 
   min-width: 2rem;
 
-  padding-block: var(--sf-form-p-input-block);
-  padding-inline: var(--sf-form-p-input-inline);
+  padding: var(--sf-form-p-input-block) var(--sf-form-p-input-inline);
 
   background: hsl(var(--sf-form-c-bd) / 5%);
 }
@@ -107,3 +110,8 @@ label.sf-switch input[type='checkbox']:checked::after { transform: translate3d(v
 }
 
 .sf-switch.multiple.vert .sf-switch-toggle { flex-flow: column }
+
+.sf-switch.multiple .sf-switch-description {
+  font-size: var(--sf-txt-small);
+  margin: 0;
+}

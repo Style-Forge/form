@@ -1,8 +1,10 @@
-:where(button, input, optgroup, option, select, textarea),
-:where(button, input, optgroup, option, select, textarea)::before,
-:where(button, input, optgroup, option, select, textarea)::after
+:where(label, button, input, optgroup, option, select, textarea),
+:where(label, button, input, optgroup, option, select, textarea)::before,
+:where(label, button, input, optgroup, option, select, textarea)::after
 { box-sizing: border-box }
 
+
+label,
 ::file-selector-button,
 button,
 input,
@@ -17,6 +19,18 @@ textarea
   line-height: 1;
 
   text-transform: none;
+}
+
+::file-selector-button,
+button,
+input,
+optgroup,
+option,
+select,
+textarea
+{
+  appearance: auto;
+  touch-action: manipulation;
 }
 
 button,
