@@ -38,6 +38,8 @@
 }
 
 :root:where([data-theme='dark'], .dark) {
+  color-scheme: dark;
+
   --sf-form-c-white: var(--sf-form-dark-c-white);
 
   --sf-form-c-bg: var(--sf-form-dark-c-bg);
@@ -52,6 +54,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root:where([data-theme='auto'], .auto) {
+    color-scheme: light dark;
+
     --sf-form-c-white: var(--sf-form-dark-c-white);
 
     --sf-form-c-bg: var(--sf-form-dark-c-bg);
