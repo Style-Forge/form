@@ -76,7 +76,7 @@ label.sf-switch input[type='checkbox'] ~ *
 .sf-switch.multiple .sf-switch-toggle span {
   display: block;
 
-  font-size: var(--sf-txt-small);
+  font-size: var(--sf-fz-small);
   text-align: center;
 
   min-width: 2rem;
@@ -112,6 +112,6 @@ label.sf-switch input[type='checkbox'] ~ *
 .sf-switch.multiple.vert .sf-switch-toggle { flex-flow: column }
 
 .sf-switch.multiple .sf-switch-description {
-  font-size: var(--sf-txt-small);
+  font-size: var(--sf-fz-small);
   margin: 0;
 }
