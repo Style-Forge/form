@@ -1,16 +1,17 @@
 
-# Contributing to style-forge.form
+# Contributing to Style-Forge.Form
 
-Thank you for your interest in contributing to the style-forge.form project! We welcome contributions from the community. Please follow these guidelines to ensure a smooth contribution process.
+Thank you for your interest in contributing to the `Style-Forge.Form` project! We welcome contributions from the community. Please follow these guidelines to ensure a smooth contribution process.
 
 ## How to Contribute
 
 1. **Fork the repository**
    - Click the "Fork" button at the top right corner of the repository page on GitHub.
+   
 
 2. **Clone the forked repository to your local machine**
    ```bash
-   git clone https://github.com/your-username/style-forge.form.git
+   git clone https://github.com/Style-Forge/form.git
    ```
 
 3. **Create a new branch for your changes**
@@ -49,5 +50,7 @@ If you find a bug or have a feature request, please open an issue on GitHub. Pro
 
 - Be respectful and considerate in your communications.
 - Follow the project's code of conduct.
+
+For more information, visit our [documentation site](https://style-forge.dev/form/).
 
 Thank you for your contributions!
