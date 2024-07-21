@@ -6,9 +6,9 @@
   "main": "form.css",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sarmaged/style-forge.form.git"
+    "url": "git+https://github.com/Style-Forge/form.git"
   },
-  "author": "Sarmaged <sarmaged@gmail.com>",
+  "author": "Dmitrii Sagalov <sarmaged@gmail.com>",
   "license": "MIT",
   "keywords": [
     "style-forge",
@@ -37,9 +37,9 @@
     "postcss-minify": "^1.1.0"
   },
   "bugs": {
-    "url": "https://github.com/sarmaged/style-forge.form/issues"
+    "url": "https://github.com/Style-Forge/form/issues"
   },
-  "homepage": "https://github.com/sarmaged/style-forge.form#readme",
+  "homepage": "https://style-forge.dev/form/",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   }
