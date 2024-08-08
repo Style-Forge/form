@@ -1,6 +1,6 @@
 {
   "name": "style-forge.form",
-  "version": "3.3.3",
+  "version": "4.0.0",
   "description": "Style-Forge.Form: versatile library for easy form creation, validation, styling, and submission in web apps.",
   "type": "module",
   "main": "form.css",
