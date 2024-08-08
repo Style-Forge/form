@@ -3,7 +3,7 @@
   to { background-position: 28px 0 }
 }
 
-a.sf-loading:not([href]),
+a.sf-loading.sf-button:not([href]),
 .sf-loading:disabled,
 .sf-loading:is(.sf-button, .sf-input:not([type='color'])):disabled
 {
