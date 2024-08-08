@@ -5,13 +5,16 @@
 .sf-button:is(a, button, input[type='button'], input[type='submit'], input[type='reset']) *::after
 { box-sizing: inherit }
 
-.sf-button:where(button, input[type='button'], input[type='submit'], input[type='reset']) {
+.sf-button:is(button, input[type='button'], input[type='submit'], input[type='reset']) {
   appearance: auto;
   touch-action: manipulation;
 }
-.sf-button:where(a, button, input[type='button'], input[type='submit'], input[type='reset']) {
-  cursor: pointer;
 
+.sf-button:where(a, button, input[type='button'], input[type='submit'], input[type='reset']) { cursor: pointer }
+
+.sf-button:is(a, button, input[type='button'], input[type='submit'], input[type='reset']),
+.sf-button:is(a, button, input[type='button'], input[type='submit'], input[type='reset']):hover
+{
   display: inline-block;
 
   font-size: var(--sf-form-fz);
@@ -30,27 +33,6 @@
   border-radius: var(--sf-form-radius);
 
   padding: var(--sf-form-p-input-block) var(--sf-form-p-input-inline);
-}
-
-a.sf-button {
-  text-transform: none;
-
-  color: hsl(var(--sf-form-c-txt));
-  background: hsl(var(--sf-form-c-bg) / 20%);
-  border: 1px solid hsl(var(--sf-form-c-bd) / 20%);
-
-  text-align: center;
-  text-decoration: none;
-}
-a.sf-button:hover {
-  text-transform: none;
-
-  color: hsl(var(--sf-form-c-txt));
-  background: hsl(var(--sf-form-c-bg) / 20%);
-  border: 1px solid hsl(var(--sf-form-c-bd) / 20%);
-
-  text-align: center;
-  text-decoration: none;
 }
 
 a.sf-button:not([href]) {

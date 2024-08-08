@@ -1,13 +1,13 @@
-input:is(.sf-input:not([type='radio'], [type='checkbox'], [type='color'], [type='file'], [type='image'])) { box-sizing: border-box }
+input.sf-input:not([type='radio'], [type='checkbox'], [type='color'], [type='file'], [type='image']) { box-sizing: border-box }
 
-input:is(.sf-input:not([type='radio'], [type='checkbox'], [type='color'], [type='file'], [type='image'])) *,
-input:is(.sf-input:not([type='radio'], [type='checkbox'], [type='color'], [type='file'], [type='image'])) *::before,
-input:is(.sf-input:not([type='radio'], [type='checkbox'], [type='color'], [type='file'], [type='image'])) *::after
+input.sf-input:not([type='radio'], [type='checkbox'], [type='color'], [type='file'], [type='image']) *,
+input.sf-input:not([type='radio'], [type='checkbox'], [type='color'], [type='file'], [type='image']) *::before,
+input.sf-input:not([type='radio'], [type='checkbox'], [type='color'], [type='file'], [type='image']) *::after
 { box-sizing: inherit }
 
-input:where(.sf-input[type='image'], [type='range']) { cursor: pointer }
+input.sf-input:is([type='image'], [type='range']) { cursor: pointer }
 
-input:where(.sf-input:not([type='radio'], [type='checkbox'], [type='color'], [type='file'], [type='image'], [type='range'])) {
+input:is(.sf-input:not([type='radio'], [type='checkbox'], [type='color'], [type='file'], [type='image'], [type='range'])) {
   cursor: text;
 
   appearance: auto;
@@ -36,35 +36,35 @@ input:where(.sf-input:not([type='radio'], [type='checkbox'], [type='color'], [ty
   transition: border 0.1s ease-out;
 }
 
-input.sf-input:where([type='time'], [type='week'], [type='month'], [type='date'], [type='datetime-local']) {
+input.sf-input:is([type='time'], [type='week'], [type='month'], [type='date'], [type='datetime-local']) {
   appearance: none;
   text-align: start;
   height: 37px;
 }
-input.sf-input:where([type='time'], [type='week'], [type='month'], [type='date'], [type='datetime-local'])::-webkit-date-and-time-value { text-align: start }
+input.sf-input:is([type='time'], [type='week'], [type='month'], [type='date'], [type='datetime-local'])::-webkit-date-and-time-value { text-align: start }
 input.sf-input:focus-visible::-webkit-calendar-picker-indicator {
   cursor: pointer;
   outline: none;
 }
 
-input:where(.sf-input:not([type='radio'], [type='checkbox'], [type='color'], [type='file'], [type='image'], [type='range']))::placeholder { color: hsl(var(--sf-form-c-txt) / 40%) }
-input:where(.sf-input:not([type='radio'], [type='checkbox'], [type='color'], [type='file'], [type='image'], [type='range'])):placeholder-shown {
+input:is(.sf-input:not([type='radio'], [type='checkbox'], [type='color'], [type='file'], [type='image'], [type='range']))::placeholder { color: hsl(var(--sf-form-c-txt) / 40%) }
+input:is(.sf-input:not([type='radio'], [type='checkbox'], [type='color'], [type='file'], [type='image'], [type='range'])):placeholder-shown {
   border-color: hsl(var(--sf-form-c-bd) / 20%);
   border-radius: var(--sf-form-radius);
 }
 
-input.sf-input:focus {
+input:is(.sf-input:not([type='radio'], [type='checkbox'], [type='color'], [type='file'], [type='image'], [type='range'])):focus {
   border-color: transparent transparent hsl(var(--sf-form-c-info));
   border-radius: 0;
   outline: none;
 }
-input.sf-input:where([type='color'], [type='image'], [type='range']):focus-visible {
+input.sf-input:is([type='color'], [type='image'], [type='range']):focus-visible {
   outline: 2px solid hsl(var(--sf-form-c-info));
   outline-offset: 2px;
   border-radius: var(--sf-form-radius);
 }
 
-input:where(.sf-input:not([type='radio'], [type='checkbox'], [type='color'], [type='file'])):disabled {
+input:is(.sf-input:not([type='radio'], [type='checkbox'], [type='color'], [type='file'])):disabled {
   cursor: not-allowed;
   -webkit-tap-highlight-color: transparent;
   opacity: var(--sf-disabled);
