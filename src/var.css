@@ -1,9 +1,12 @@
 :root {
+  --sf-form-ff: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+  --sf-form-fz: 0.95rem;
+  --sf-form-fz-small: 0.75rem;
+
   --sf-gap: 0.5em;
 
   --sf-disabled: 0.4;
-
-  --sf-fz-small: 0.75rem;
 
   --sf-form-radius: 0.5em;
 
@@ -11,7 +14,7 @@
   --sf-form-p-input-inline: 0.5em;
 
   /* switch */
-  --sf-form-switch-size: 1em;
+  --sf-form-switch-size: 1rem;
 
   /* global */
   --sf-form-c-white: 0 0% 100%;

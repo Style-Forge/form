@@ -1,8 +1,7 @@
+/* Require */
 @import 'var.css';
-@import 'base.css';
-@import 'global.css';
-@import 'pseudo-classes.css';
 
+/* Inputs */
 @import 'input.css';
 @import 'button.css';
 @import 'checkbox-radio.css';
@@ -11,9 +10,11 @@
 @import 'color.css';
 @import 'file.css';
 
-@import 'time.css';
+/* Custom inputs */
 @import 'switch.css';
 
+/* Loader */
 @import 'loading.css';
 
+/* Validation */
 @import 'validate.css';

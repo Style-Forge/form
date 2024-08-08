@@ -1,8 +1,22 @@
-input.sf-input[type='file']::file-selector-button,
-.sf-button:where(a, button, input[type='button'], input[type='submit'], input[type='reset'])
-{
+.sf-button:is(a, button, input[type='button'], input[type='submit'], input[type='reset']) { box-sizing: border-box }
+
+.sf-button:is(a, button, input[type='button'], input[type='submit'], input[type='reset']) *,
+.sf-button:is(a, button, input[type='button'], input[type='submit'], input[type='reset']) *::before,
+.sf-button:is(a, button, input[type='button'], input[type='submit'], input[type='reset']) *::after
+{ box-sizing: inherit }
+
+.sf-button:where(button, input[type='button'], input[type='submit'], input[type='reset']) {
+  appearance: auto;
+  touch-action: manipulation;
+}
+.sf-button:where(a, button, input[type='button'], input[type='submit'], input[type='reset']) {
+  cursor: pointer;
+
   display: inline-block;
 
+  font-size: var(--sf-form-fz);
+  font-family: var(--sf-form-ff);
+  font-weight: 400;
   line-height: 1;
 
   color: hsl(var(--sf-form-c-txt));
@@ -11,19 +25,25 @@ input.sf-input[type='file']::file-selector-button,
 
   text-align: center;
   text-decoration: none;
-}
-
-a.sf-button
-{
-  appearance: auto;
-
-  font-size: inherit;
-  font-family: inherit;
-  font-weight: 400;
-
   text-transform: none;
 
-  touch-action: manipulation;
+  border-radius: var(--sf-form-radius);
+
+  padding: var(--sf-form-p-input-block) var(--sf-form-p-input-inline);
+}
+
+a.sf-button {
+  text-transform: none;
+
+  color: hsl(var(--sf-form-c-txt));
+  background: hsl(var(--sf-form-c-bg) / 20%);
+  border: 1px solid hsl(var(--sf-form-c-bd) / 20%);
+
+  text-align: center;
+  text-decoration: none;
+}
+a.sf-button:hover {
+  text-transform: none;
 
   color: hsl(var(--sf-form-c-txt));
   background: hsl(var(--sf-form-c-bg) / 20%);
@@ -39,6 +59,15 @@ a.sf-button:not([href]) {
   opacity: var(--sf-disabled);
   -webkit-tap-highlight-color: transparent;
 }
-a.sf-button:not([href]):hover {
-  color: inherit;
+a.sf-button:not([href]):hover { color: inherit }
+
+.sf-button:where(button, input[type='button'], input[type='submit'], input[type='reset']):disabled {
+  cursor: not-allowed;
+  -webkit-tap-highlight-color: transparent;
+  opacity: var(--sf-disabled);
+}
+
+.sf-button:where(a, button, input[type='button'], input[type='submit'], input[type='reset']):focus-visible {
+  outline: 1px solid hsl(var(--sf-form-c-info));
+  outline-offset: -1px;
 }

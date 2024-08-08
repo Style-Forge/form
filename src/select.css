@@ -1,5 +1,33 @@
+select.sf-select { box-sizing: border-box }
+
+select.sf-select *,
+select.sf-select *::before,
+select.sf-select *::after
+{ box-sizing: inherit }
+
+select.sf-select,
+select.sf-select option
+{
+  appearance: auto;
+  touch-action: manipulation;
+
+  font-size: var(--sf-form-fz);
+  font-family: var(--sf-form-ff);
+  font-weight: 400;
+  line-height: 1;
+
+  text-transform: none;
+
+  padding: var(--sf-form-p-input-block) var(--sf-form-p-input-inline);
+}
+select.sf-select option { padding: calc(var(--sf-form-p-input-block) / 2) calc(var(--sf-form-p-input-inline) / 2) }
+select.sf-select optgroup { padding: calc(var(--sf-form-p-input-block) / 2) 0 }
+
 select.sf-select {
-  font-size: 0.9375rem;
+  cursor: pointer;
+
+  appearance: auto;
+  touch-action: manipulation;
 
   color: hsl(var(--sf-form-c-txt));
   background: hsl(var(--sf-form-c-bg) / 20%);
@@ -7,5 +35,18 @@ select.sf-select {
 
   width: 100%;
 
+  border-radius: var(--sf-form-radius);
+
   overflow: auto;
+}
+
+select.sf-select:focus-visible {
+  outline: 1px solid hsl(var(--sf-form-c-info));
+  outline-offset: -1px;
+}
+
+select.sf-select:disabled {
+  cursor: not-allowed;
+  -webkit-tap-highlight-color: transparent;
+  opacity: var(--sf-disabled);
 }

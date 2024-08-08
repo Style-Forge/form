@@ -2,8 +2,8 @@
   display: none;
   color: hsl(var(--sf-form-c-txt) / 40%);
 
-  font-size: var(--sf-fz-small);
-  font-family: inherit;
+  font-size: var(--sf-form-fz-small);
+  font-family: var(--sf-form-ff);
   font-weight: 400;
   line-height: 1;
 
@@ -38,11 +38,8 @@
 .sf-invalid { color: hsl(var(--sf-form-c-error)) }
 .sf-valid:not(.sf-description) { color: hsl(var(--sf-form-c-txt)) }
 
-.show:is(.sf-description, .sf-invalid, .sf-valid)
-{ display: block }
-
-.hide:is(.sf-description, .sf-invalid, .sf-valid)
-{ display: none }
+.show:is(.sf-description, .sf-invalid, .sf-valid) { display: block }
+.hide:is(.sf-description, .sf-invalid, .sf-valid) { display: none }
 
 .error:not(:disabled) + .sf-invalid,
 .error:not(:disabled) + .sf-valid + .sf-invalid,

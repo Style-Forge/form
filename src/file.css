@@ -1,5 +1,22 @@
+input.sf-input[type='file'] { box-sizing: border-box }
+
+input.sf-input[type='file'] *,
+input.sf-input[type='file'] *::before,
+input.sf-input[type='file'] *::after
+{ box-sizing: inherit }
+
 input.sf-input[type='file'] {
-  width: 100%;
+  cursor: pointer;
+
+  appearance: auto;
+  touch-action: manipulation;
+
+  display: inline-block;
+
+  font-size: var(--sf-form-fz);
+  font-family: var(--sf-form-ff);
+  font-weight: 400;
+  line-height: 1;
 
   padding: 0;
   margin: 0;
@@ -9,7 +26,33 @@ input.sf-input[type='file'] {
   text-overflow: ellipsis;
 }
 input.sf-input[type='file']::file-selector-button {
-  font-size: inherit;
-  font-family: inherit;
-  line-height: 1;
+  cursor: pointer;
+
+  display: inline-block;
+
+  text-transform: none;
+  text-align: center;
+  text-decoration: none;
+
+  color: hsl(var(--sf-form-c-txt));
+  background: hsl(var(--sf-form-c-bg) / 20%);
+  border: 1px solid hsl(var(--sf-form-c-bd) / 20%);
+
+  padding: var(--sf-form-p-input-block) var(--sf-form-p-input-inline);
+
+  border-radius: var(--sf-form-radius);
+}
+input.sf-input[type='file']:focus-visible {
+  outline: none;
+}
+input.sf-input[type='file']:focus-visible::file-selector-button {
+  outline: 1px solid hsl(var(--sf-form-c-info));
+  outline-offset: -1px;
+}
+
+input.sf-input[type='file']:disabled { opacity: var(--sf-disabled) }
+input.sf-input[type='file']:disabled,
+input.sf-input[type='file']:disabled::file-selector-button {
+  cursor: not-allowed;
+  -webkit-tap-highlight-color: transparent;
 }
