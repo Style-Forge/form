@@ -4,7 +4,8 @@
 }
 
 a.sf-loading:not([href]),
-.sf-loading:disabled
+.sf-loading:disabled,
+.sf-loading:is(.sf-button, .sf-input:not([type='color'])):disabled
 {
   --c1: transparent;
   --c2: hsl(var(--sf-form-c-loading) / 5%);
