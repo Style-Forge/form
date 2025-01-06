@@ -1,29 +1,11 @@
 :root {
-  --sf-form-ff: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-
-  --sf-form-fz: 0.95rem;
-  --sf-form-fz-small: 0.75rem;
-
-  --sf-gap: 0.5em;
-
-  --sf-disabled: 0.4;
-
-  --sf-form-radius: 0.5em;
-
-  --sf-form-p-input-block: 0.5em;
-  --sf-form-p-input-inline: 0.5em;
-
-  /* switch */
-  --sf-form-switch-size: 1rem;
-
-  /* global */
   --sf-form-c-white: 0 0% 100%;
   --sf-form-c-info: 200 100% 60%;
   --sf-form-c-error: 0 100% 60%;
   --sf-form-c-success: 0 100% 60%;
   --sf-form-c-warning: 39 100% 50%;
 
-  --sf-form-c-bg: 0 0% 100%;
+  --sf-form-c-bg: 0 0% 90%;
   --sf-form-c-bd: 0 0% 10%;
   --sf-form-c-loading: 0 0% 10%;
   --sf-form-c-txt: 0 0% 10%;
@@ -41,7 +23,7 @@
   --sf-form-dark-c-txt: 0 0% 90%;
 }
 
-:root:where([data-theme='dark'], .dark) {
+html[data-theme='dark'], html.dark {
   color-scheme: dark;
 
   --sf-form-c-white: var(--sf-form-dark-c-white);
@@ -57,7 +39,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root:where([data-theme='auto'], .auto) {
+  html[data-theme='auto'], html.auto {
     color-scheme: light dark;
 
     --sf-form-c-white: var(--sf-form-dark-c-white);

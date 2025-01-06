@@ -1,78 +1,63 @@
+:root {
+  --sf-form-fz: 0.9375rem;
+  --sf-disabled: 0.4;
+}
+
 label.sf-radio, label.sf-checkbox { box-sizing: border-box }
 
 label.sf-radio *,
 label.sf-radio *::before,
 label.sf-radio *::after,
-
 label.sf-checkbox *,
 label.sf-checkbox *::before,
 label.sf-checkbox *::after
 { box-sizing: inherit }
 
-label.sf-radio,
-label.sf-checkbox
-{
-  display: flex;
-  flex-flow: wrap row;
-  align-items: center;
-  gap: var(--sf-gap);
+label.sf-radio input,
+label.sf-checkbox input,
+label.sf-radio input::before,
+label.sf-checkbox input::before
+{ width: 16px; height: 16px }
 
-  font-size: var(--sf-form-fz);
-  font-family: var(--sf-form-ff);
-  font-weight: 400;
-  line-height: 1;
-
-  text-transform: none;
-}
-
-label.sf-radio input[type='radio'],
-label.sf-checkbox input[type='checkbox'],
-label.sf-radio input[type='radio']::before,
-label.sf-checkbox input[type='checkbox']::before
-{
-  width: 1em;
-  height: 1em;
-}
-
-label.sf-radio input[type='radio'] ~ *,
-label.sf-checkbox input[type='checkbox'] ~ *
+label.sf-radio input, label.sf-radio input ~ *,
+label.sf-checkbox input, label.sf-checkbox input ~ *
 { cursor: pointer }
 
-label.sf-radio input[type='radio'],
-label.sf-checkbox input[type='checkbox']
+label.sf-radio input:disabled, label.sf-radio input:disabled ~ *,
+label.sf-checkbox input:disabled, label.sf-checkbox input:disabled ~ *
+{
+  cursor: not-allowed;
+  opacity: var(--sf-disabled);
+}
+
+label.sf-radio input,
+label.sf-checkbox input
 {
   appearance: none;
-  touch-action: manipulation;
 
   position: relative;
 
-  font-size: var(--sf-form-fz);
-  font-family: var(--sf-form-ff);
-  font-weight: 400;
-  line-height: 1;
-
-  border: 0;
-  background: none;
-
+  margin: 0 0 -2px;
   padding: 0;
-  margin: 0;
+
+  vertical-align: baseline;
 }
-label.sf-radio input[type='radio']::before,
-label.sf-checkbox input[type='checkbox']::before
+label.sf-radio input::before,
+label.sf-checkbox input::before
 {
   top: 0;
   left: 0;
   position: absolute;
 
-  width: 1em;
-  height: 1em;
+  width: 16px;
+  height: 16px;
   content: '';
 
-  background: hsl(var(--sf-form-c-bg) / 20%);
+  background-color: hsl(var(--sf-form-c-bg) / 20%);
   border: 1px solid hsl(var(--sf-form-c-bd) / 20%);
 }
-label.sf-radio input[type='radio']::after,
-label.sf-checkbox input[type='checkbox']::after
+label.sf-radio input::after,
+label.sf-checkbox input::after
 {
   top: 3px;
   left: 3px;
@@ -83,27 +68,17 @@ label.sf-checkbox input[type='checkbox']::after
   content: '';
 }
 
-label.sf-radio input[type='radio']:checked::before,
-label.sf-checkbox input[type='checkbox']:checked::before
+label.sf-radio input:checked::before,
+label.sf-checkbox input:checked::before
 { border-color: hsl(var(--sf-form-c-info)) }
 
-label.sf-radio input[type='radio']:checked::after,
-label.sf-checkbox input[type='checkbox']:checked::after
-{ background: hsl(var(--sf-form-c-info)) }
+label.sf-radio input:checked::after,
+label.sf-checkbox input:checked::after
+{ background-color: hsl(var(--sf-form-c-info)) }
 
-label.sf-radio input[type='radio']::before,
-label.sf-radio input[type='radio']::after
+label.sf-radio input::before,
+label.sf-radio input::after
 { border-radius: 50% }
-
-label.sf-radio input[type='radio']:disabled,
-label.sf-radio input[type='radio']:disabled ~ *,
-label.sf-checkbox input[type='checkbox']:disabled,
-label.sf-checkbox input[type='checkbox']:disabled ~ *
-{
-  cursor: not-allowed;
-  -webkit-tap-highlight-color: transparent;
-  opacity: var(--sf-disabled);
-}
 
 .sf-radio input:focus-visible,
 .sf-checkbox input:focus-visible
@@ -113,3 +88,17 @@ label.sf-checkbox input[type='checkbox']:disabled ~ *
   outline-offset: 2px;
 }
 .sf-radio input:focus-visible { border-radius: 50% }
+
+/* /// */
+
+html.var label.sf-radio input:disabled, html.var label.sf-radio input:disabled ~ *,
+html.var label.sf-checkbox input:disabled, html.var label.sf-checkbox input:disabled ~ *
+{ opacity: 0.4 }
+
+html.var label.sf-radio input::before,
+html.var label.sf-checkbox input::before
+{ border-color: hsla(0, 0%, 10%, 0.2) }
+
+html.var label.sf-radio input:checked::before, html.var label.sf-radio input:checked::after, html.var .sf-radio input:focus-visible,
+html.var label.sf-checkbox input:checked::before, html.var label.sf-checkbox input:checked::after, html.var .sf-checkbox input:focus-visible
+{ outline-color: hsl(200, 100%, 60%) }

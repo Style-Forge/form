@@ -5,12 +5,20 @@
 
 a.sf-loading.sf-button:not([href]),
 .sf-loading:disabled,
-.sf-loading:is(.sf-button, .sf-input:not([type='color'])):disabled
+.sf-loading.sf-button:disabled,
+.sf-loading.sf-input:not([type='color']):disabled
 {
   --c1: transparent;
   --c2: hsl(var(--sf-form-c-loading) / 5%);
-  background: hsl(var(--sf-form-c-info));
+
+  cursor: progress;
   background: repeating-linear-gradient(45deg, var(--c1), var(--c1) 10px, var(--c2) 10px, var(--c2) 20px);
   background-size: 28px 100%;
   animation: Loading .3s linear infinite;
 }
+
+html.var a.sf-loading.sf-button:not([href]),
+html.var .sf-loading:disabled,
+html.var .sf-loading.sf-button:disabled,
+html.var .sf-loading.sf-input:not([type='color']):disabled
+{ background: repeating-linear-gradient(45deg, transparent, transparent 10px, hsla(0, 0%, 10%, 0.05) 10px, hsla(0, 0%, 10%, 0.05) 20px) }

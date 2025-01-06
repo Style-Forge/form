@@ -1,17 +1,25 @@
-input.sf-input:not([type='radio'], [type='checkbox'], [type='color'], [type='file'], [type='image']) { box-sizing: border-box }
+:root {
+  --sf-form-ff: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 
-input.sf-input:not([type='radio'], [type='checkbox'], [type='color'], [type='file'], [type='image']) *,
-input.sf-input:not([type='radio'], [type='checkbox'], [type='color'], [type='file'], [type='image']) *::before,
-input.sf-input:not([type='radio'], [type='checkbox'], [type='color'], [type='file'], [type='image']) *::after
+  --sf-form-fz: 0.9375rem;
+
+  --sf-disabled: 0.4;
+
+  --sf-form-radius: 3px;
+
+  --sf-form-p-input-block: 0.5em;
+  --sf-form-p-input-inline: 0.5em;
+}
+
+.sf-input *,
+.sf-input *::before,
+.sf-input *::after
 { box-sizing: inherit }
 
-input.sf-input:is([type='image'], [type='range']) { cursor: pointer }
+.sf-input[type='image'], .sf-input[type='range'] { cursor: pointer }
 
-input:is(.sf-input:not([type='radio'], [type='checkbox'], [type='color'], [type='file'], [type='image'], [type='range'])) {
-  cursor: text;
-
-  appearance: auto;
-  touch-action: manipulation;
+.sf-input {
+  cursor: auto;
 
   font-size: var(--sf-form-fz);
   font-family: var(--sf-form-ff);
@@ -23,49 +31,86 @@ input:is(.sf-input:not([type='radio'], [type='checkbox'], [type='color'], [type=
   color: hsl(var(--sf-form-c-txt));
   background: hsl(var(--sf-form-c-bg) / 20%);
 
-  border: 1px solid;
-  border-color: transparent transparent hsl(var(--sf-form-c-bd) / 20%);
+  border-style: solid;
+  border-color: hsl(var(--sf-form-c-bd) / 20%);
+  border-width: 0 0 1px;
   border-radius: 0;
 
   outline: none;
 
   width: 100%;
+  height: 32px;
 
   padding: var(--sf-form-p-input-block) var(--sf-form-p-input-inline);
 
-  transition: border 0.1s ease-out;
+  box-sizing: border-box;
+  vertical-align: top;
 }
 
-input.sf-input:is([type='time'], [type='week'], [type='month'], [type='date'], [type='datetime-local']) {
+.sf-input[type='image'], .sf-input[type='range'] { border: 0; padding: 0 }
+.sf-input[type='range'] { width: 100% }
+.sf-input[type='image'] { width: auto; height: auto }
+
+.sf-input[type='time'],
+.sf-input[type='week'],
+.sf-input[type='month'],
+.sf-input[type='date'],
+.sf-input[type='datetime-local'] {
   appearance: none;
   text-align: start;
-  height: 37px;
 }
-input.sf-input:is([type='time'], [type='week'], [type='month'], [type='date'], [type='datetime-local'])::-webkit-date-and-time-value { text-align: start }
-input.sf-input:focus-visible::-webkit-calendar-picker-indicator {
+.sf-input::-webkit-date-and-time-value { text-align: start }
+
+.sf-input::-webkit-calendar-picker-indicator {
   cursor: pointer;
   outline: none;
+  opacity: 0.5;
 }
+.sf-input:hover::-webkit-calendar-picker-indicator { opacity: 1 }
 
-input:is(.sf-input:not([type='radio'], [type='checkbox'], [type='color'], [type='file'], [type='image'], [type='range']))::placeholder { color: hsl(var(--sf-form-c-txt) / 40%) }
-input:is(.sf-input:not([type='radio'], [type='checkbox'], [type='color'], [type='file'], [type='image'], [type='range'])):placeholder-shown {
-  border-color: hsl(var(--sf-form-c-bd) / 20%);
-  border-radius: var(--sf-form-radius);
-}
+.sf-input::placeholder { color: hsl(var(--sf-form-c-txt) / 40%) }
 
-input:is(.sf-input:not([type='radio'], [type='checkbox'], [type='color'], [type='file'], [type='image'], [type='range'])):focus {
+.sf-input:focus {
   border-color: transparent transparent hsl(var(--sf-form-c-info));
-  border-radius: 0;
   outline: none;
 }
-input.sf-input:is([type='color'], [type='image'], [type='range']):focus-visible {
+
+.sf-input[type='color']:focus-visible,
+.sf-input[type='image']:focus-visible,
+.sf-input[type='range']:focus-visible {
   outline: 2px solid hsl(var(--sf-form-c-info));
   outline-offset: 2px;
-  border-radius: var(--sf-form-radius);
 }
 
-input:is(.sf-input:not([type='radio'], [type='checkbox'], [type='color'], [type='file'])):disabled {
+.sf-input:disabled {
   cursor: not-allowed;
-  -webkit-tap-highlight-color: transparent;
   opacity: var(--sf-disabled);
 }
+
+/* /// */
+
+html.var .sf-input {
+  font-size: 15px;
+  font-family: Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+  color: hsl(0, 0%, 10%);
+  background: hsla(0, 0%, 90%, 0.2);
+
+  border-color: hsla(0, 0%, 10%, 0.2);
+
+  padding: 8px;
+}
+
+html.var .sf-input::placeholder { color: hsla(0, 0%, 10%, 0.4) }
+html.var .sf-input:placeholder-shown { border-color: hsla(0, 0%, 10%, 0.2) }
+
+html.var .sf-input:focus { border-color: hsl(200, 100%, 60%) }
+
+html.var .sf-input[type='image'], html.var .sf-input[type='range'] { background: none }
+
+html.var .sf-input[type='color']:focus-visible,
+html.var .sf-input[type='image']:focus-visible,
+html.var .sf-input[type='range']:focus-visible
+{ outline: 2px solid hsl(200, 100%, 60%) }
+
+html.var .sf-input:disabled { opacity: 0.4 }

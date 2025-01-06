@@ -1,0 +1,82 @@
+html.var[data-theme='dark'] .sf-select::-ms-expand,
+html.var.dark .sf-select::-ms-expand
+{ color: hsl(0, 0%, 90%) }
+
+html.var[data-theme='dark'] .sf-input[type='file']::file-selector-button,
+html.var.dark .sf-input[type='file']::file-selector-button {
+  color: hsl(0, 0%, 90%);
+  background-color: hsla(0, 0%, 20%, 0.2);
+  border-color: hsla(0, 0%, 100%, 0.2);
+}
+
+html.var[data-theme='dark'] .sf-input[type='file']:focus-visible::file-selector-button,
+html.var.dark .sf-input[type='file']:focus-visible::file-selector-button { outline-color: hsl(219, 79%, 66%) }
+
+html.var[data-theme='dark'] .sf-button,
+html.var[data-theme='dark'] .sf-input,
+html.var[data-theme='dark'] .sf-textarea,
+html.var[data-theme='dark'] .sf-select,
+html.var[data-theme='dark'] option,
+html.var.dark .sf-button,
+html.var.dark .sf-input,
+html.var.dark .sf-textarea,
+html.var.dark .sf-select,
+html.var.dark option
+{
+  color: hsl(0, 0%, 90%);
+  background-color: hsl(0, 0%, 20%);
+  border-color: hsla(0, 0%, 100%, 0.2);
+}
+
+html.var[data-theme='dark'] .sf-description,
+html.var[data-theme='dark'] .sf-valid,
+html.var.dark .sf-description,
+html.var.dark .sf-valid
+{ color: hsla(0, 0%, 90%, 0.4) }
+
+html.var[data-theme='dark'] .sf-invalid,
+html.var.dark .sf-invalid
+{ color: hsl(0, 100%, 65%) }
+
+html.var[data-theme='dark'] .sf-button:focus-visible,
+html.var[data-theme='dark'] label.sf-radio input:checked::before, html.var label.sf-radio input:checked::after, html.var .sf-radio input:focus-visible,
+html.var[data-theme='dark'] label.sf-checkbox input:checked::before, html.var label.sf-checkbox input:checked::after, html.var .sf-checkbox input:focus-visible,
+html.var[data-theme='dark'] .sf-input:focus,
+html.var[data-theme='dark'] .sf-input[type='color']:focus-visible,
+html.var[data-theme='dark'] .sf-input[type='image']:focus-visible,
+html.var[data-theme='dark'] .sf-input[type='range']:focus-visible,
+html.var[data-theme='dark'] .sf-textarea:focus-visible,
+html.var[data-theme='dark'] .sf-select:focus-visible,
+html.var.dark .sf-button:focus-visible,
+html.var.dark label.sf-radio input:checked::before, html.var label.sf-radio input:checked::after, html.var .sf-radio input:focus-visible,
+html.var.dark label.sf-checkbox input:checked::before, html.var label.sf-checkbox input:checked::after, html.var .sf-checkbox input:focus-visible,
+html.var.dark .sf-input:focus,
+html.var.dark .sf-input[type='color']:focus-visible,
+html.var.dark .sf-input[type='image']:focus-visible,
+html.var.dark .sf-input[type='range']:focus-visible,
+html.var.dark .sf-textarea:focus-visible,
+html.var.dark .sf-select:focus-visible
+{ outline-color: hsl(219, 79%, 66%) }
+
+html.var[data-theme='dark'] .sf-input[type='color']::-webkit-color-swatch,
+html.var.dark .sf-input[type='color']::-webkit-color-swatch
+{ border-color: hsl(0, 0%, 100%) }
+html.var[data-theme='dark'] .sf-input[type='color']::-moz-color-swatch,
+html.var.dark .sf-input[type='color']::-moz-color-swatch
+{ border-color: hsl(0, 0%, 100%) }
+
+html.var[data-theme='dark'] .sf-input, html.var.dark .sf-input { border-color: transparent transparent hsla(0, 0%, 100%, 0.2) }
+
+html.var[data-theme='dark'] .sf-input::placeholder,
+html.var[data-theme='dark'] .sf-textarea::placeholder,
+html.var.dark .sf-input::placeholder,
+html.var.dark .sf-textarea::placeholder
+{ color: hsla(0, 0%, 90%, 0.4) }
+
+html.var[data-theme='dark'] .sf-input:placeholder-shown,
+html.var.dark .sf-input:placeholder-shown
+{ border-color: hsla(0, 0%, 100%, 0.2) }
+
+html.var[data-theme='dark'] .sf-input[type='image'], html.var[data-theme='dark'] .sf-input[type='range'],
+html.var.dark .sf-input[type='image'], html.var.dark .sf-input[type='range']
+{ background: none }

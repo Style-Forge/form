@@ -10,11 +10,7 @@
 @import 'color.css';
 @import 'file.css';
 
-/* Custom inputs */
 @import 'switch.css';
-
-/* Loader */
 @import 'loading.css';
-
-/* Validation */
 @import 'validate.css';
+@import 'theme.css';

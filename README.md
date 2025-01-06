@@ -4,8 +4,7 @@
 ![npm](https://img.shields.io/npm/v/style-forge.form)
 ![license](https://img.shields.io/npm/l/style-forge.form)
 ![npm](https://img.shields.io/npm/dm/style-forge.form)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/255f15046ef744fcac1eefd4495b4a71)](https://app.codacy.com/gh/Style-Forge/form/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
-![build](https://github.com/Style-Forge/form/actions/workflows/publish.yml/badge.svg)
+![build](https://github.com/Style-Forge/form/actions/workflows/release.yml/badge.svg)
 
 `Style-Forge.Form` package is a versatile and easy-to-use library designed to streamline the creation and management of forms in web applications. It offers a robust set of tools to handle form validation, styling, and submission processes, enhancing user experience and developer productivity.
 
