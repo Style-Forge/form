@@ -1,6 +1,6 @@
 {
   "name": "style-forge.form",
-  "version": "4.0.4",
+  "version": "2025.1.6",
   "description": "Style-Forge.Form: versatile library for easy form creation, validation, styling, and submission in web apps.",
   "type": "module",
   "main": "form.css",
@@ -31,8 +31,11 @@
     "build": "node builder.js"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.19",
-    "postcss": "^8.4.39",
+    "autoprefixer": "^10.4.20",
+    "caniuse-lite": "^1.0.30001690",
+    "postcss": "^8.4.49",
+    "postcss-combine-duplicated-selectors": "^10.0.3",
+    "postcss-discard-comments": "^7.0.3",
     "postcss-import": "^16.1.0",
     "postcss-minify": "^1.1.0"
   },

@@ -1,3 +1,13 @@
+:root {
+  --sf-form-ff: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --sf-form-fz: 0.9375rem;
+  --sf-form-fz-small: 0.75rem;
+  --sf-disabled: 0.4;
+  --sf-form-p-input-block: 0.5em;
+  --sf-form-p-input-inline: 0.5em;
+  --sf-form-switch-size: 1rem;
+}
+
 .sf-switch { box-sizing: border-box }
 
 .sf-switch.multiple *,
@@ -6,11 +16,6 @@
 { box-sizing: inherit }
 
 .sf-switch {
-  display: flex;
-  flex-flow: wrap row;
-  align-items: center;
-  gap: var(--sf-gap);
-
   font-size: var(--sf-form-fz);
   font-family: var(--sf-form-ff);
   font-weight: 400;
@@ -33,7 +38,7 @@ label.sf-switch input[type='checkbox'] {
   width: calc(var(--sf-form-switch-size) * 2);
   height: var(--sf-form-switch-size);
 
-  vertical-align: middle;
+  vertical-align: text-top;
 }
 label.sf-switch input[type='checkbox']::before {
   cursor: pointer;
@@ -75,26 +80,29 @@ label.sf-switch input[type='checkbox'] ~ *
 { cursor: pointer }
 
 .sf-switch.multiple .sf-switch-toggle {
-  display: flex;
-  flex-flow: row;
+  display: inline-block;
 
   background: hsl(var(--sf-form-c-bg) / 20%);
   box-shadow: 1px 2px 8px 0 hsl(var(--sf-form-c-bd) / 15%);
 }
+.sf-switch.multiple .sf-switch-toggle * { display: inline-block }
 .sf-switch.multiple .sf-switch-toggle label { position: relative }
 .sf-switch.multiple .sf-switch-toggle span {
-  display: block;
-
   font-size: var(--sf-form-fz-small);
   text-align: center;
 
-  min-width: 2rem;
+  min-width: 32px;
 
-  padding: calc(var(--sf-form-p-input-block) * 1.25) calc(var(--sf-form-p-input-inline) * 1.25);
+  padding: var(--sf-form-p-input-block) var(--sf-form-p-input-inline);
 
   background: hsl(var(--sf-form-c-bd) / 5%);
 }
-.sf-switch.multiple input:where([type='checkbox'], [type='radio']) {
+
+.sf-switch.multiple input[type='checkbox'],
+.sf-switch.multiple input[type='radio']
+{
+  appearance: none;
+
   cursor: pointer;
 
   top: 0;
@@ -104,18 +112,24 @@ label.sf-switch input[type='checkbox'] ~ *
   position: absolute;
   z-index: 1;
 
-  appearance: none;
-  background: none;
+  width: 100%;
+  height: 100%;
 
   padding: 0;
   margin: 0;
   border: 0;
+
+  opacity: 0;
 }
-.sf-switch.multiple input:where([type='checkbox'], [type='radio'])::before,
-.sf-switch.multiple input:where([type='checkbox'], [type='radio'])::after
+.sf-switch.multiple input[type='checkbox']::before,
+.sf-switch.multiple input[type='radio']::before,
+.sf-switch.multiple input[type='checkbox']::after,
+.sf-switch.multiple input[type='radio']::after
 { content: none }
 
-.sf-switch.multiple input:where([type='checkbox'], [type='radio']):checked ~ span {
+.sf-switch.multiple input[type='checkbox']:checked ~ span,
+.sf-switch.multiple input[type='radio']:checked ~ span
+{
   color: hsl(var(--sf-form-c-white));
   background: hsl(var(--sf-form-c-info));
 }
@@ -124,29 +138,94 @@ label.sf-switch input[type='checkbox'] ~ *
 
 .sf-switch.multiple .sf-switch-description {
   font-size: var(--sf-form-fz-small);
-  margin: 0;
+  margin: 0.5em 0 0;
+  padding: 0 0 0.5em;
 }
 
 .sf-switch input[type='checkbox']:disabled,
 .sf-switch input[type='checkbox']:disabled::after,
 .sf-switch input[type='checkbox']:disabled::before,
 .sf-switch input[type='checkbox']:disabled ~ *,
-.sf-switch.multiple input:where([type='checkbox'], [type='radio']):disabled,
-.sf-switch.multiple input:where([type='checkbox'], [type='radio']):disabled ~ *
+.sf-switch.multiple input[type='checkbox']:disabled,
+.sf-switch.multiple input[type='radio']:disabled,
+.sf-switch.multiple input[type='checkbox']:disabled ~ *,
+.sf-switch.multiple input[type='radio']:disabled ~ *
 {
   cursor: not-allowed;
-  -webkit-tap-highlight-color: transparent;
 }
 
 .sf-switch input[type='checkbox']:disabled,
 .sf-switch input[type='checkbox']:disabled ~ *,
-.sf-switch.multiple input:where([type='checkbox'], [type='radio']):disabled ~ *
+.sf-switch.multiple input[type='checkbox']:disabled ~ *,
+.sf-switch.multiple input[type='radio']:disabled ~ *
 { opacity: var(--sf-disabled) }
 
-.sf-switch input:where([type='checkbox'], [type='radio']):focus-visible {
+.sf-switch input[type='checkbox']:focus-visible,
+.sf-switch input[type='radio']:focus-visible
+{
   border-color: transparent;
   outline: 2px solid hsl(var(--sf-form-c-info));
 }
-.sf-switch:not(.multiple) input:where([type='checkbox'], [type='radio']):focus-visible {
+.sf-switch:not(.multiple) input[type='checkbox']:focus-visible,
+.sf-switch:not(.multiple) input[type='radio']:focus-visible
+{
   border-radius: calc(var(--sf-form-switch-size) / 2)
 }
+
+/* /// */
+
+html.var .sf-switch {
+  font-size: 15px;
+  font-family: Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+html.var label.sf-switch input[type='checkbox'] {
+  width: 16px;
+  height: 16px;
+}
+html.var label.sf-switch input[type='checkbox']::before {
+  width: 16px;
+  height: 16px;
+  background: hsla(0, 0%, 10%, 0.2);
+  border-radius: 8px;
+}
+html.var label.sf-switch input[type='checkbox']::after {
+  width: 28px;
+  height: 28px;
+  background: hsl(0, 0%, 100%);
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px hsl(0, 0%, 100%);
+}
+html.var label.sf-switch input[type='checkbox']:checked::before { background: hsl(200, 100%, 60%) }
+
+html.var .sf-switch.multiple .sf-switch-toggle {
+  background: hsla(0, 0%, 90%, 0.2);
+  box-shadow: 1px 2px 8px 0 hsla(0, 0%, 10%, 0.15);
+}
+html.var .sf-switch.multiple .sf-switch-toggle span {
+  font-size: 12px;
+  padding: 8px;
+  background: hsla(0, 0%, 10%, 0.1);
+}
+
+html.var .sf-switch.multiple input[type='checkbox']:checked ~ span,
+html.var .sf-switch.multiple input[type='radio']:checked ~ span
+{
+  color: hsl(0, 0%, 100%);
+  background: hsl(200, 100%, 60%);
+}
+
+html.var .sf-switch.multiple .sf-switch-description { font-size: 12px }
+
+html.var .sf-switch input[type='checkbox']:disabled ~ *,
+html.var .sf-switch.multiple input[type='checkbox']:disabled ~ *,
+html.var .sf-switch.multiple input[type='radio']:disabled ~ *
+{ opacity: 0.4 }
+
+html.var .sf-switch input[type='checkbox']:focus-visible,
+html.var .sf-switch input[type='radio']:focus-visible
+{ outline: 2px solid hsl(200, 100%, 60%) }
+
+html.var .sf-switch:not(.multiple) input[type='checkbox']:focus-visible,
+html.var .sf-switch:not(.multiple) input[type='radio']:focus-visible
+{ border-radius: 8px }

@@ -1,20 +1,15 @@
-.sf-button:is(a, button, input[type='button'], input[type='submit'], input[type='reset']) { box-sizing: border-box }
-
-.sf-button:is(a, button, input[type='button'], input[type='submit'], input[type='reset']) *,
-.sf-button:is(a, button, input[type='button'], input[type='submit'], input[type='reset']) *::before,
-.sf-button:is(a, button, input[type='button'], input[type='submit'], input[type='reset']) *::after
-{ box-sizing: inherit }
-
-.sf-button:is(button, input[type='button'], input[type='submit'], input[type='reset']) {
-  appearance: auto;
-  touch-action: manipulation;
+:root {
+  --sf-form-ff: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --sf-form-fz: 0.9375rem;
+  --sf-disabled: 0.4;
+  --sf-form-radius: 3px;
+  --sf-form-p-input-block: 0.5em;
+  --sf-form-p-input-inline: 0.5em;
 }
 
-.sf-button:where(a, button, input[type='button'], input[type='submit'], input[type='reset']) { cursor: pointer }
+.sf-button {
+  cursor: pointer;
 
-.sf-button:is(a, button, input[type='button'], input[type='submit'], input[type='reset']),
-.sf-button:is(a, button, input[type='button'], input[type='submit'], input[type='reset']):hover
-{
   display: inline-block;
 
   font-size: var(--sf-form-fz);
@@ -32,24 +27,46 @@
 
   border-radius: var(--sf-form-radius);
 
+  height: 32px;
+
   padding: var(--sf-form-p-input-block) var(--sf-form-p-input-inline);
+
+  box-sizing: border-box;
+
+  vertical-align: baseline;
 }
 
-a.sf-button:not([href]) {
+a.sf-button:not([href]),
+.sf-button:disabled
+{
   cursor: not-allowed;
-  text-decoration: none;
-  opacity: var(--sf-disabled);
-  -webkit-tap-highlight-color: transparent;
-}
-a.sf-button:not([href]):hover { color: inherit }
-
-.sf-button:where(button, input[type='button'], input[type='submit'], input[type='reset']):disabled {
-  cursor: not-allowed;
-  -webkit-tap-highlight-color: transparent;
   opacity: var(--sf-disabled);
 }
 
-.sf-button:where(a, button, input[type='button'], input[type='submit'], input[type='reset']):focus-visible {
+.sf-button:focus-visible
+{
   outline: 1px solid hsl(var(--sf-form-c-info));
   outline-offset: -1px;
 }
+
+/* /// */
+
+html.var .sf-button
+{
+  font-size: 15px;
+  font-family: Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+  color: hsl(0, 0%, 10%);
+  background: hsla(0, 0%, 100%, 0.2);
+  border: 1px solid hsla(0, 0%, 10%, 0.2);
+
+  border-radius: 3px;
+
+  padding: 8px;
+}
+
+html.var a.sf-button:not([href]),
+html.var .sf-button:disabled
+{ opacity: 0.4 }
+
+html.var .sf-button:focus-visible { outline: 1px solid hsl(200, 100%, 60%) }
