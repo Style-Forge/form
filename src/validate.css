@@ -1,6 +1,6 @@
 :root {
   --sf-form-ff: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-  --sf-form-fz-small: 0.625rem;
+  --sf-form-fz-small: 0.75rem;
   --sf-lh-normal: 1.1875;
   --sf-disabled: 0.4;
 }
@@ -60,15 +60,15 @@
 .validates input[type='checkbox']:invalid ~ .sf-invalid { display: block }
 .validates input[type='checkbox']:valid ~ .sf-valid { display: block }
 
-.validates:required:not(:focus) { border-bottom-color: hsl(var(--sf-form-c-warning)) }
-.validates:required:not(:disabled) { border-bottom-color: hsl(var(--sf-form-c-warning)) }
+.validates:required:invalid:not(:focus) { border-bottom-color: hsl(var(--sf-form-c-warning)) }
+.validates:required:invalid:not(:disabled) { border-bottom-color: hsl(var(--sf-form-c-warning)) }
 
 .validates input[type='radio']:invalid::before,
 .validates input[type='checkbox']:invalid::before
 { border-color: hsl(var(--sf-form-c-error)) }
 
 .error:not(:disabled),
-.validates:invalid:focus
+.validates:required:invalid:focus
 {
   border-bottom-color: hsl(var(--sf-form-c-error));
   outline: none;
@@ -98,7 +98,7 @@ html.var .sf-invalid,
 html.var .sf-valid {
   color: hsla(0, 0%, 10%, 0.4);
 
-  font-size: 10px;
+  font-size: 12px;
   font-family: Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
