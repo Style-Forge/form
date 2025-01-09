@@ -1,5 +1,5 @@
 :root {
-  --sf-form-ff: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --sf-form-ff: 'Inter', ui-sans-serif, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --sf-form-fz: 0.9375rem;
   --sf-lh-normal: 1.1875;
   --sf-disabled: 0.4;
@@ -65,7 +65,7 @@ html.var .sf-select,
 html.var .sf-select option
 {
   font-size: 15px;
-  font-family: Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: 'Inter', ui-sans-serif, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 html.var .sf-select:not([multiple]) { padding: 0 0 0 8px }
 html.var .sf-select { padding: 8px 0 8px 8px }
