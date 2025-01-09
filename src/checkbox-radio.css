@@ -53,8 +53,8 @@ label.sf-checkbox input::before
   height: 16px;
   content: '';
 
-  background-color: hsl(var(--sf-form-c-bg) / 20%);
-  border: 1px solid hsl(var(--sf-form-c-bd) / 20%);
+  background-color: hsl(var(--sf-c-form-bg) / 20%);
+  border: 1px solid hsl(var(--sf-c-form-bd) / 20%);
 }
 label.sf-radio input::after,
 label.sf-checkbox input::after
@@ -70,11 +70,11 @@ label.sf-checkbox input::after
 
 label.sf-radio input:checked::before,
 label.sf-checkbox input:checked::before
-{ border-color: hsl(var(--sf-form-c-info)) }
+{ border-color: hsl(var(--sf-c-form-info)) }
 
 label.sf-radio input:checked::after,
 label.sf-checkbox input:checked::after
-{ background-color: hsl(var(--sf-form-c-info)) }
+{ background-color: hsl(var(--sf-c-form-info)) }
 
 label.sf-radio input::before,
 label.sf-radio input::after
@@ -84,7 +84,7 @@ label.sf-radio input::after
 .sf-checkbox input:focus-visible
 {
   border-color: transparent;
-  outline: 2px solid hsl(var(--sf-form-c-info));
+  outline: 2px solid hsl(var(--sf-c-form-info));
   outline-offset: 2px;
 }
 .sf-radio input:focus-visible { border-radius: 50% }

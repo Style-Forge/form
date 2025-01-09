@@ -25,11 +25,11 @@
 .sf-select {
   cursor: pointer;
 
-  background: hsl(var(--sf-form-c-bg) / 20%);
+  background: hsl(var(--sf-c-form-bg) / 20%);
 
   border-width: 1px;
   border-style: solid;
-  border-color: hsl(var(--sf-form-c-bd) / 20%);
+  border-color: hsl(var(--sf-c-form-bd) / 20%);
   border-radius: 0;
 
   width: 100%;
@@ -50,7 +50,7 @@
 }
 
 .sf-select:focus-visible {
-  outline: 1px solid hsl(var(--sf-form-c-info));
+  outline: 1px solid hsl(var(--sf-c-form-info));
   outline-offset: -1px;
 }
 

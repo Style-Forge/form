@@ -17,9 +17,9 @@
   font-weight: 400;
   line-height: 1;
 
-  color: hsl(var(--sf-form-c-txt));
-  background: hsl(var(--sf-form-c-bg) / 20%);
-  border: 1px solid hsl(var(--sf-form-c-bd) / 20%);
+  color: hsl(var(--sf-c-form-txt));
+  background: hsl(var(--sf-c-form-bg) / 20%);
+  border: 1px solid hsl(var(--sf-c-form-bd) / 20%);
 
   text-align: center;
   text-decoration: none;
@@ -45,7 +45,7 @@ a.sf-button:not([href]),
 
 .sf-button:focus-visible
 {
-  outline: 1px solid hsl(var(--sf-form-c-info));
+  outline: 1px solid hsl(var(--sf-c-form-info));
   outline-offset: -1px;
 }
 

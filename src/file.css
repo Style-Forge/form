@@ -36,9 +36,9 @@
   text-transform: none;
   text-decoration: none;
 
-  color: hsl(var(--sf-form-c-txt));
-  background: hsl(var(--sf-form-c-bg) / 20%);
-  border: 1px solid hsl(var(--sf-form-c-bd) / 20%);
+  color: hsl(var(--sf-c-form-txt));
+  background: hsl(var(--sf-c-form-bg) / 20%);
+  border: 1px solid hsl(var(--sf-c-form-bd) / 20%);
 
   height: 32px;
 
@@ -46,7 +46,7 @@
 }
 .sf-input[type='file']:focus-visible { outline: none }
 .sf-input[type='file']:focus-visible::file-selector-button {
-  outline: 1px solid hsl(var(--sf-form-c-info));
+  outline: 1px solid hsl(var(--sf-c-form-info));
   outline-offset: -1px;
 }
 

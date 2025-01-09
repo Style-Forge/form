@@ -6,7 +6,7 @@
 }
 
 .sf-description, .sf-invalid, .sf-valid {
-  color: hsl(var(--sf-form-c-txt) / 40%);
+  color: hsl(var(--sf-c-form-txt) / 40%);
 
   font-size: var(--sf-form-fz-small);
   font-family: var(--sf-form-ff);
@@ -22,8 +22,8 @@
 html .sf-description, html .sf-invalid, html .sf-valid { display: none }
 html .sf-description { display: block }
 
-.sf-invalid { color: hsl(var(--sf-form-c-error)) }
-.sf-valid:not(.sf-description) { color: hsl(var(--sf-form-c-txt)) }
+.sf-invalid { color: hsl(var(--sf-c-form-error)) }
+.sf-valid:not(.sf-description) { color: hsl(var(--sf-c-form-txt)) }
 
 .show.sf-description, .show.sf-invalid, .show.sf-valid { display: block }
 .hide.sf-description, .hide.sf-invalid, .hide.sf-valid { display: none }
@@ -60,17 +60,17 @@ html .sf-description { display: block }
 .validates input[type='checkbox']:invalid ~ .sf-invalid { display: block }
 .validates input[type='checkbox']:valid ~ .sf-valid { display: block }
 
-.validates:required:invalid:not(:focus) { border-bottom-color: hsl(var(--sf-form-c-warning)) }
-.validates:required:invalid:not(:disabled) { border-bottom-color: hsl(var(--sf-form-c-warning)) }
+.validates:required:invalid:not(:focus) { border-bottom-color: hsl(var(--sf-c-form-warning)) }
+.validates:required:invalid:not(:disabled) { border-bottom-color: hsl(var(--sf-c-form-warning)) }
 
 .validates input[type='radio']:invalid::before,
 .validates input[type='checkbox']:invalid::before
-{ border-color: hsl(var(--sf-form-c-error)) }
+{ border-color: hsl(var(--sf-c-form-error)) }
 
 .error:not(:disabled),
 .validates:required:invalid:focus
 {
-  border-bottom-color: hsl(var(--sf-form-c-error));
+  border-bottom-color: hsl(var(--sf-c-form-error));
   outline: none;
 }
 
@@ -88,7 +88,7 @@ form.validates:invalid .sf-button[type='submit'] {
   cursor: not-allowed;
   text-decoration: none;
   opacity: var(--sf-disabled);
-  -webkit-text-fill-color: hsl(var(--sf-form-c-txt));
+  -webkit-text-fill-color: hsl(var(--sf-c-form-txt));
 }
 
 /* /// */

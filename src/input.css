@@ -28,11 +28,11 @@
 
   text-transform: none;
 
-  color: hsl(var(--sf-form-c-txt));
-  background: hsl(var(--sf-form-c-bg) / 20%);
+  color: hsl(var(--sf-c-form-txt));
+  background: hsl(var(--sf-c-form-bg) / 20%);
 
   border-style: solid;
-  border-color: hsl(var(--sf-form-c-bd) / 20%);
+  border-color: hsl(var(--sf-c-form-bd) / 20%);
   border-width: 0 0 1px;
   border-radius: 0;
 
@@ -68,17 +68,17 @@
 }
 .sf-input:hover::-webkit-calendar-picker-indicator { opacity: 1 }
 
-.sf-input::placeholder { color: hsl(var(--sf-form-c-txt) / 40%) }
+.sf-input::placeholder { color: hsl(var(--sf-c-form-txt) / 40%) }
 
 .sf-input:focus {
-  border-color: transparent transparent hsl(var(--sf-form-c-info));
+  border-color: transparent transparent hsl(var(--sf-c-form-info));
   outline: none;
 }
 
 .sf-input[type='color']:focus-visible,
 .sf-input[type='image']:focus-visible,
 .sf-input[type='range']:focus-visible {
-  outline: 2px solid hsl(var(--sf-form-c-info));
+  outline: 2px solid hsl(var(--sf-c-form-info));
   outline-offset: 2px;
 }
 
