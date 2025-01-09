@@ -25,11 +25,11 @@
 
 .sf-input[type='color']::-webkit-color-swatch-wrapper { padding: 3px }
 .sf-input[type='color']::-webkit-color-swatch {
-  border: 2px solid hsl(var(--sf-form-c-white));
+  border: 2px solid hsl(var(--sf-c-form-white));
   border-radius: 50%;
 }
 .sf-input[type='color']::-moz-color-swatch {
-  border: 2px solid hsl(var(--sf-form-c-white));
+  border: 2px solid hsl(var(--sf-c-form-white));
   border-radius: 50%;
 }
 

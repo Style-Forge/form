@@ -1,5 +1,5 @@
 :root {
-  --sf-form-ff: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --sf-form-ff: 'Inter', ui-sans-serif, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --sf-form-fz: 0.9375rem;
   --sf-form-fz-small: 0.75rem;
   --sf-disabled: 0.4;
@@ -51,7 +51,7 @@ label.sf-switch input[type='checkbox']::before {
   height: var(--sf-form-switch-size);
   content: '';
 
-  background: hsl(var(--sf-form-c-bd) / 20%);
+  background: hsl(var(--sf-c-form-bd) / 20%);
   border-radius: calc(var(--sf-form-switch-size) / 2);
 }
 label.sf-switch input[type='checkbox']::after {
@@ -66,13 +66,13 @@ label.sf-switch input[type='checkbox']::after {
 
   content: '';
 
-  background: hsl(var(--sf-form-c-white));
+  background: hsl(var(--sf-c-form-white));
   border-radius: calc(var(--sf-form-switch-size) / 2);
-  box-shadow: 0 0 0 1px hsl(var(--sf-form-c-white));
+  box-shadow: 0 0 0 1px hsl(var(--sf-c-form-white));
 
   transition: transform 0.05s ease-in;
 }
-label.sf-switch input[type='checkbox']:checked::before { background: hsl(var(--sf-form-c-info)) }
+label.sf-switch input[type='checkbox']:checked::before { background: hsl(var(--sf-c-form-info)) }
 label.sf-switch input[type='checkbox']:checked::after { transform: translate3d(var(--sf-form-switch-size), 0, 0) }
 
 label.sf-switch input[type='radio'] ~ *,
@@ -82,8 +82,8 @@ label.sf-switch input[type='checkbox'] ~ *
 .sf-switch.multiple .sf-switch-toggle {
   display: inline-block;
 
-  background: hsl(var(--sf-form-c-bg) / 20%);
-  box-shadow: 1px 2px 8px 0 hsl(var(--sf-form-c-bd) / 15%);
+  background: hsl(var(--sf-c-form-bg) / 20%);
+  box-shadow: 1px 2px 8px 0 hsl(var(--sf-c-form-bd) / 15%);
 }
 .sf-switch.multiple .sf-switch-toggle * { display: inline-block }
 .sf-switch.multiple .sf-switch-toggle label { position: relative }
@@ -95,7 +95,7 @@ label.sf-switch input[type='checkbox'] ~ *
 
   padding: var(--sf-form-p-input-block) var(--sf-form-p-input-inline);
 
-  background: hsl(var(--sf-form-c-bd) / 5%);
+  background: hsl(var(--sf-c-form-bd) / 5%);
 }
 
 .sf-switch.multiple input[type='checkbox'],
@@ -130,8 +130,8 @@ label.sf-switch input[type='checkbox'] ~ *
 .sf-switch.multiple input[type='checkbox']:checked ~ span,
 .sf-switch.multiple input[type='radio']:checked ~ span
 {
-  color: hsl(var(--sf-form-c-white));
-  background: hsl(var(--sf-form-c-info));
+  color: hsl(var(--sf-c-form-white));
+  background: hsl(var(--sf-c-form-info));
 }
 
 .sf-switch.multiple.vert .sf-switch-toggle { flex-flow: column }
@@ -164,7 +164,7 @@ label.sf-switch input[type='checkbox'] ~ *
 .sf-switch input[type='radio']:focus-visible
 {
   border-color: transparent;
-  outline: 2px solid hsl(var(--sf-form-c-info));
+  outline: 2px solid hsl(var(--sf-c-form-info));
 }
 .sf-switch:not(.multiple) input[type='checkbox']:focus-visible,
 .sf-switch:not(.multiple) input[type='radio']:focus-visible
@@ -176,7 +176,7 @@ label.sf-switch input[type='checkbox'] ~ *
 
 html.var .sf-switch {
   font-size: 15px;
-  font-family: Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: 'Inter', ui-sans-serif, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
 html.var label.sf-switch input[type='checkbox'] {

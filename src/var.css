@@ -1,56 +1,56 @@
 :root {
-  --sf-form-c-white: 0 0% 100%;
-  --sf-form-c-info: 200 100% 60%;
-  --sf-form-c-error: 0 100% 60%;
-  --sf-form-c-success: 0 100% 60%;
-  --sf-form-c-warning: 39 100% 50%;
+  --sf-c-form-white: 0 0% 100%;
+  --sf-c-form-info: 200 100% 60%;
+  --sf-c-form-error: 0 100% 60%;
+  --sf-c-form-success: 0 100% 60%;
+  --sf-c-form-warning: 39 100% 50%;
 
-  --sf-form-c-bg: 0 0% 90%;
-  --sf-form-c-bd: 0 0% 10%;
-  --sf-form-c-loading: 0 0% 10%;
-  --sf-form-c-txt: 0 0% 10%;
+  --sf-c-form-bg: 0 0% 90%;
+  --sf-c-form-bd: 0 0% 10%;
+  --sf-c-form-loading: 0 0% 10%;
+  --sf-c-form-txt: 0 0% 10%;
 
-  /* global dark theme */
-  --sf-form-dark-c-white: 0 0% 100%;
-  --sf-form-dark-c-info: 219 79% 66%;
-  --sf-form-dark-c-error: 0 100% 65%;
-  --sf-form-dark-c-success: 0 100% 65%;
-  --sf-form-dark-c-warning: 39 100% 60%;
+  /* colors for dark theme */
+  --sf-dark-c-form-white: 0 0% 100%;
+  --sf-dark-c-form-info: 219 79% 66%;
+  --sf-dark-c-form-error: 0 100% 65%;
+  --sf-dark-c-form-success: 0 100% 65%;
+  --sf-dark-c-form-warning: 39 100% 60%;
 
-  --sf-form-dark-c-bg: 0 0% 20%;
-  --sf-form-dark-c-bd: 0 0% 100%;
-  --sf-form-dark-c-loading: 0 0% 100%;
-  --sf-form-dark-c-txt: 0 0% 90%;
+  --sf-dark-c-form-bg: 0 0% 20%;
+  --sf-dark-c-form-bd: 0 0% 100%;
+  --sf-dark-c-form-loading: 0 0% 100%;
+  --sf-dark-c-form-txt: 0 0% 90%;
 }
 
 html[data-theme='dark'], html.dark {
   color-scheme: dark;
 
-  --sf-form-c-white: var(--sf-form-dark-c-white);
+  --sf-c-form-white: var(--sf-dark-c-form-white);
 
-  --sf-form-c-bg: var(--sf-form-dark-c-bg);
-  --sf-form-c-error: var(--sf-form-dark-c-error);
-  --sf-form-c-success: var(--sf-form-dark-c-success);
-  --sf-form-c-warning: var(--sf-form-dark-c-warning);
-  --sf-form-c-info: var(--sf-form-dark-c-info);
-  --sf-form-c-bd: var(--sf-form-dark-c-bd);
-  --sf-form-c-loading: var(--sf-form-dark-c-loading);
-  --sf-form-c-txt: var(--sf-form-dark-c-txt);
+  --sf-c-form-bg: var(--sf-dark-c-form-bg);
+  --sf-c-form-error: var(--sf-dark-c-form-error);
+  --sf-c-form-success: var(--sf-dark-c-form-success);
+  --sf-c-form-warning: var(--sf-dark-c-form-warning);
+  --sf-c-form-info: var(--sf-dark-c-form-info);
+  --sf-c-form-bd: var(--sf-dark-c-form-bd);
+  --sf-c-form-loading: var(--sf-dark-c-form-loading);
+  --sf-c-form-txt: var(--sf-dark-c-form-txt);
 }
 
 @media (prefers-color-scheme: dark) {
   html[data-theme='auto'], html.auto {
     color-scheme: light dark;
 
-    --sf-form-c-white: var(--sf-form-dark-c-white);
+    --sf-c-form-white: var(--sf-dark-c-form-white);
 
-    --sf-form-c-bg: var(--sf-form-dark-c-bg);
-    --sf-form-c-error: var(--sf-form-dark-c-error);
-    --sf-form-c-success: var(--sf-form-dark-c-success);
-    --sf-form-c-warning: var(--sf-form-dark-c-warning);
-    --sf-form-c-info: var(--sf-form-dark-c-info);
-    --sf-form-c-bd: var(--sf-form-dark-c-bd);
-    --sf-form-c-loading: var(--sf-form-dark-c-loading);
-    --sf-form-c-txt: var(--sf-form-dark-c-txt);
+    --sf-c-form-bg: var(--sf-dark-c-form-bg);
+    --sf-c-form-error: var(--sf-dark-c-form-error);
+    --sf-c-form-success: var(--sf-dark-c-form-success);
+    --sf-c-form-warning: var(--sf-dark-c-form-warning);
+    --sf-c-form-info: var(--sf-dark-c-form-info);
+    --sf-c-form-bd: var(--sf-dark-c-form-bd);
+    --sf-c-form-loading: var(--sf-dark-c-form-loading);
+    --sf-c-form-txt: var(--sf-dark-c-form-txt);
   }
 }
