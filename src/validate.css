@@ -5,13 +5,12 @@
   --sf-disabled: 0.4;
 }
 
-html .sf-description, html .sf-invalid, html .sf-valid {
-  display: none;
+.sf-description, .sf-invalid, .sf-valid {
   color: hsl(var(--sf-form-c-txt) / 40%);
 
   font-size: var(--sf-form-fz-small);
   font-family: var(--sf-form-ff);
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1;
 
   text-transform: none;
@@ -20,10 +19,11 @@ html .sf-description, html .sf-invalid, html .sf-valid {
   padding: 0 0 0.5em;
 }
 
+html .sf-description, html .sf-invalid, html .sf-valid { display: none }
 html .sf-description { display: block }
 
-html .sf-invalid { color: hsl(var(--sf-form-c-error)) }
-html .sf-valid:not(.sf-description) { color: hsl(var(--sf-form-c-txt)) }
+.sf-invalid { color: hsl(var(--sf-form-c-error)) }
+.sf-valid:not(.sf-description) { color: hsl(var(--sf-form-c-txt)) }
 
 .show.sf-description, .show.sf-invalid, .show.sf-valid { display: block }
 .hide.sf-description, .hide.sf-invalid, .hide.sf-valid { display: none }
