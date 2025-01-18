@@ -2,7 +2,7 @@
   --sf-form-ff: 'Inter', ui-sans-serif, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --sf-form-fz: 0.9375rem;
   --sf-disabled: 0.4;
-  --sf-form-radius: 3px;
+  --sf-radius: 3px;
 }
 
 .sf-input[type='file'] {
@@ -42,7 +42,7 @@
 
   height: 32px;
 
-  border-radius: var(--sf-form-radius);
+  border-radius: var(--sf-radius);
 }
 .sf-input[type='file']:focus-visible { outline: none }
 .sf-input[type='file']:focus-visible::file-selector-button {

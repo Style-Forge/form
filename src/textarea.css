@@ -2,7 +2,7 @@
   --sf-form-ff: 'Inter', ui-sans-serif, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --sf-form-fz: 0.9375rem;
   --sf-disabled: 0.4;
-  --sf-form-radius: 3px;
+  --sf-radius: 3px;
   --sf-form-p-input-block: 0.5em;
   --sf-form-p-input-inline: 0.5em;
 }
@@ -15,7 +15,10 @@
 
   color: hsl(var(--sf-c-form-txt));
   background: hsl(var(--sf-c-form-bg) / 20%);
-  border: 1px solid hsl(var(--sf-c-form-bd) / 20%);
+
+  border-style: solid;
+  border-color: hsl(var(--sf-c-form-bd) / 20%);
+  border-width: 1px;
 
   width: 100%;
   max-width: 100%;
@@ -23,7 +26,7 @@
 
   padding: var(--sf-form-p-input-block) var(--sf-form-p-input-inline);
 
-  border-radius: var(--sf-form-radius);
+  border-radius: var(--sf-radius);
 
   resize: vertical;
 
@@ -53,16 +56,19 @@ html.var .sf-textarea {
   font-size: 15px;
   font-family: 'Inter', ui-sans-serif, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
-  color: hsl(0, 0%, 10%);
-  background: hsla(0, 0%, 90%, 0.2);
-  border: 1px solid hsla(0, 0%, 10%, 0.2);
-
   min-height: calc((1.499535em + 2px + 0.5em) * 4);
 
   padding: 8px;
 
   border-radius: 3px;
 }
+
+html.var .sf-textarea:not([class*='sf-c-']) {
+  color: hsl(0, 0%, 10%);
+  background: hsla(0, 0%, 90%, 0.2);
+}
+html.var .sf-textarea:not(.bdc\:i) { border-color: hsla(0, 0%, 10%, 0.2) }
+
 html.var .sf-textarea::placeholder { color: hsla(0, 0%, 10%, 0.4) }
 html.var .sf-textarea:disabled { opacity: 0.4 }
 html.var .sf-textarea:focus:valid { border-color: hsl(200, 100%, 60%) }
