@@ -12,30 +12,46 @@ html.var.dark .sf-input[type='file']::file-selector-button {
 html.var[data-theme='dark'] .sf-input[type='file']:focus-visible::file-selector-button,
 html.var.dark .sf-input[type='file']:focus-visible::file-selector-button { outline-color: hsl(219, 79%, 66%) }
 
-html.var[data-theme='dark'] .sf-button,
-html.var[data-theme='dark'] .sf-input,
-html.var[data-theme='dark'] .sf-textarea,
-html.var[data-theme='dark'] .sf-select,
+html.var[data-theme='dark'] .sf-button:not([class*='sf-c-']),
+html.var[data-theme='dark'] .sf-input:not([class*='sf-c-']),
+html.var[data-theme='dark'] .sf-textarea:not([class*='sf-c-']),
+html.var[data-theme='dark'] .sf-select:not([class*='sf-c-']),
 html.var[data-theme='dark'] option,
-html.var.dark .sf-button,
-html.var.dark .sf-input,
-html.var.dark .sf-textarea,
-html.var.dark .sf-select,
+html.var.dark .sf-button:not([class*='sf-c-']),
+html.var.dark .sf-input:not([class*='sf-c-']),
+html.var.dark .sf-textarea:not([class*='sf-c-']),
+html.var.dark .sf-select:not([class*='sf-c-']),
 html.var.dark option
 {
   color: hsl(0, 0%, 90%);
   background-color: hsl(0, 0%, 20%);
-  border-color: hsla(0, 0%, 100%, 0.2);
 }
 
-html.var[data-theme='dark'] .sf-description,
-html.var[data-theme='dark'] .sf-valid,
-html.var.dark .sf-description,
-html.var.dark .sf-valid
+/* reset color */
+html.var[data-theme='dark'] .sf-button:not(.bdc\:i),
+html.var[data-theme='dark'] .sf-input:not(.bdc\:i),
+html.var[data-theme='dark'] .sf-textarea:not(.bdc\:i),
+html.var[data-theme='dark'] .sf-select:not(.bdc\:i),
+html.var[data-theme='dark'] option,
+html.var.dark .sf-button:not(.bdc\:i),
+html.var.dark .sf-input:not(.bdc\:i),
+html.var.dark .sf-textarea:not(.bdc\:i),
+html.var.dark .sf-select:not(.bdc\:i),
+html.var.dark option
+{ border-color: hsla(0, 0%, 100%, 0.2) }
+
+html.var[data-theme='dark'] .sf-description:not([class*='sf-c-']),
+html.var[data-theme='dark'] .sf-valid:not([class*='sf-c-']),
+html.var.dark .sf-description:not([class*='sf-c-']),
+html.var.dark .sf-valid:not([class*='sf-c-']),
+html.var[data-theme='dark'] .sf-description:not([class*='sf-c-']),
+html.var[data-theme='dark'] .sf-valid:not([class*='sf-c-']),
+html.var.dark .sf-description:not([class*='sf-c-']),
+html.var.dark .sf-valid:not([class*='sf-c-'])
 { color: hsla(0, 0%, 90%, 0.4) }
 
-html.var[data-theme='dark'] .sf-invalid,
-html.var.dark .sf-invalid
+html.var[data-theme='dark'] .sf-invalid:not([class*='sf-c-']),
+html.var.dark .sf-invalid:not([class*='sf-c-'])
 { color: hsl(0, 100%, 65%) }
 
 html.var[data-theme='dark'] .sf-button:focus-visible,

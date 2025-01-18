@@ -3,7 +3,7 @@
   --sf-form-fz: 0.9375rem;
   --sf-lh-normal: 1.1875;
   --sf-disabled: 0.4;
-  --sf-form-radius: 3px;
+  --sf-radius: 3px;
   --sf-form-p-input-block: 0.5em;
   --sf-form-p-input-inline: 0.5em;
 }
@@ -27,9 +27,9 @@
 
   background: hsl(var(--sf-c-form-bg) / 20%);
 
-  border-width: 1px;
   border-style: solid;
   border-color: hsl(var(--sf-c-form-bd) / 20%);
+  border-width: 1px;
   border-radius: 0;
 
   width: 100%;
@@ -70,10 +70,10 @@ html.var .sf-select option
 html.var .sf-select:not([multiple]) { padding: 0 0 0 8px }
 html.var .sf-select { padding: 8px 0 8px 8px }
 
-html.var .sf-select {
+html.var .sf-select:not([class*='sf-c-']) {
   color: hsl(0, 0%, 10%);
   background: hsla(0, 0%, 90%, 0.2);
-  border-color: hsla(0, 0%, 10%, 0.2);
 }
+html.var .sf-select:not(.bdc\:i) { border-color: hsla(0, 0%, 10%, 0.2) }
 
 html.var .sf-select:disabled { opacity: 0.4 }

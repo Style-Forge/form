@@ -1,16 +1,16 @@
 /* Require */
-@import 'var.css';
+@import './var.css';
 
 /* Inputs */
-@import 'input.css';
-@import 'button.css';
-@import 'checkbox-radio.css';
-@import 'select.css';
-@import 'textarea.css';
-@import 'color.css';
-@import 'file.css';
+@import './input.css';
+@import './button.css';
+@import './checkbox-radio.css';
+@import './select.css';
+@import './textarea.css';
+@import './color.css';
+@import './file.css';
 
-@import 'switch.css';
-@import 'loading.css';
-@import 'validate.css';
-@import 'theme.css';
+@import './switch.css';
+@import './loading.css';
+@import './validate.css';
+@import './theme.css';
