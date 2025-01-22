@@ -100,7 +100,7 @@ html.var .sf-input:not([class*='sf-c-']) {
   color: hsl(0, 0%, 10%);
   background: hsla(0, 0%, 90%, 0.2);
 }
-html.var .sf-input:not(.bdc\:i) { border-color: hsla(0, 0%, 10%, 0.2) }
+html.var .sf-input:not(.bd\:c\:ii) { border-color: hsla(0, 0%, 10%, 0.2) }
 
 html.var .sf-input::placeholder { color: hsla(0, 0%, 10%, 0.4) }
 html.var .sf-input:placeholder-shown { border-color: hsla(0, 0%, 10%, 0.2) }

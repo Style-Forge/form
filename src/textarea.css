@@ -67,7 +67,7 @@ html.var .sf-textarea:not([class*='sf-c-']) {
   color: hsl(0, 0%, 10%);
   background: hsla(0, 0%, 90%, 0.2);
 }
-html.var .sf-textarea:not(.bdc\:i) { border-color: hsla(0, 0%, 10%, 0.2) }
+html.var .sf-textarea:not(.bd\:c\:ii) { border-color: hsla(0, 0%, 10%, 0.2) }
 
 html.var .sf-textarea::placeholder { color: hsla(0, 0%, 10%, 0.4) }
 html.var .sf-textarea:disabled { opacity: 0.4 }

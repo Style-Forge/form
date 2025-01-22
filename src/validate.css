@@ -19,8 +19,8 @@
   padding: 0 0 0.5em;
 }
 
-html .sf-description, html .sf-invalid, html .sf-valid { display: none }
-html .sf-description { display: block }
+.sf-description, .sf-invalid, .sf-valid { display: none }
+.sf-description { display: block }
 
 .sf-invalid { color: hsl(var(--sf-c-form-error)) }
 .sf-valid:not(.sf-description) { color: hsl(var(--sf-c-form-txt)) }

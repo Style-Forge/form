@@ -74,6 +74,6 @@ html.var .sf-select:not([class*='sf-c-']) {
   color: hsl(0, 0%, 10%);
   background: hsla(0, 0%, 90%, 0.2);
 }
-html.var .sf-select:not(.bdc\:i) { border-color: hsla(0, 0%, 10%, 0.2) }
+html.var .sf-select:not(.bd\:c\:ii) { border-color: hsla(0, 0%, 10%, 0.2) }
 
 html.var .sf-select:disabled { opacity: 0.4 }
