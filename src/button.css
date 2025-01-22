@@ -68,7 +68,7 @@ html.var .sf-button:not([class*='sf-c-']) {
   color: hsl(0, 0%, 10%);
   background: hsla(0, 0%, 100%, 0.2);
 }
-html.var .sf-button:not(.bdc\:i) { border-color: hsla(0, 0%, 10%, 0.2) }
+html.var .sf-button:not(.bd\:c\:ii) { border-color: hsla(0, 0%, 10%, 0.2) }
 
 html.var a.sf-button:not([href]),
 html.var .sf-button:disabled
