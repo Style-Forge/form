@@ -26,6 +26,11 @@
   box-sizing: border-box;
 }
 
+/* Prevent zoom on tablet and mobile devices */
+@media only screen and (max-width: 1024px) {
+  .sf-textarea { font-size: 16px }
+}
+
 .sf-textarea::placeholder { color: hsl(var(--sf-c-form-txt) / 40%) }
 
 .sf-textarea:disabled {
