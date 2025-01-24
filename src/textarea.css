@@ -1,16 +1,7 @@
-:root {
-  --sf-form-ff: 'Inter', ui-sans-serif, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --sf-form-fz: 0.9375rem;
-  --sf-disabled: 0.4;
-  --sf-radius: 3px;
-  --sf-form-p-input-block: 0.5em;
-  --sf-form-p-input-inline: 0.5em;
-}
-
 .sf-textarea {
-  font-size: var(--sf-form-fz);
-  font-family: var(--sf-form-ff);
-  font-weight: 400;
+  font-size: 15px;
+  font-family: inherit;
+  font-weight: inherit;
   line-height: 1.499535;
 
   color: hsl(var(--sf-c-form-txt));
@@ -22,9 +13,9 @@
 
   width: 100%;
   max-width: 100%;
-  min-height: calc((1.499535em + 2px + var(--sf-form-p-input-block)) * 4);
+  min-height: calc((1.499535em + 2px + var(--sf-elm-py)) * 4);
 
-  padding: var(--sf-form-p-input-block) var(--sf-form-p-input-inline);
+  padding: var(--sf-elm-py) var(--sf-elm-px);
 
   border-radius: var(--sf-radius);
 
@@ -53,9 +44,6 @@
 /* /// */
 
 html.var .sf-textarea {
-  font-size: 15px;
-  font-family: 'Inter', ui-sans-serif, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-
   min-height: calc((1.499535em + 2px + 0.5em) * 4);
 
   padding: 8px;

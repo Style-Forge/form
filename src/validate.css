@@ -1,22 +1,15 @@
-:root {
-  --sf-form-ff: 'Inter', ui-sans-serif, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --sf-form-fz-small: 0.75rem;
-  --sf-lh-normal: 1.1875;
-  --sf-disabled: 0.4;
-}
-
 .sf-description, .sf-invalid, .sf-valid {
   color: hsl(var(--sf-c-form-txt) / 40%);
 
-  font-size: var(--sf-form-fz-small);
-  font-family: var(--sf-form-ff);
+  font-size: 12px;
+  font-family: inherit;
   font-weight: 300;
   line-height: 1;
 
   text-transform: none;
 
-  margin: 0.5em 0 0;
-  padding: 0 0 0.5em;
+  margin-top: 0.5em;
+  padding-bottom: 0.5em;
 }
 
 .sf-description, .sf-invalid, .sf-valid { display: none }
@@ -81,7 +74,8 @@ label.validates.sf-checkbox .sf-description,
 label.validates.sf-checkbox .sf-valid,
 label.validates.sf-checkbox .sf-invalid {
   width: 100%;
-  line-height: var(--sf-lh-normal);
+  /* --sf-lh-normal: 1.1875; */
+  /* line-height: var(--sf-lh-normal); */
 }
 
 form.validates:invalid .sf-button[type='submit'] {
@@ -97,9 +91,6 @@ html.var .sf-description,
 html.var .sf-invalid,
 html.var .sf-valid {
   color: hsla(0, 0%, 10%, 0.4);
-
-  font-size: 12px;
-  font-family: 'Inter', ui-sans-serif, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
 html.var label.validates.sf-switch .sf-description,
