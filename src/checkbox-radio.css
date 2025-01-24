@@ -1,8 +1,3 @@
-:root {
-  --sf-form-fz: 0.9375rem;
-  --sf-disabled: 0.4;
-}
-
 label.sf-radio, label.sf-checkbox { box-sizing: border-box }
 
 label.sf-radio *,

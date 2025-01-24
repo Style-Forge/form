@@ -1,20 +1,11 @@
-:root {
-  --sf-form-ff: 'Inter', ui-sans-serif, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --sf-form-fz: 0.9375rem;
-  --sf-disabled: 0.4;
-  --sf-radius: 3px;
-  --sf-form-p-input-block: 0.5em;
-  --sf-form-p-input-inline: 0.5em;
-}
-
 .sf-button {
   cursor: pointer;
 
   display: inline-block;
 
-  font-size: var(--sf-form-fz);
-  font-family: var(--sf-form-ff);
-  font-weight: 400;
+  font-size: 15px;
+  font-family: inherit;
+  font-weight: inherit;
   line-height: 1;
 
   color: hsl(var(--sf-c-form-txt));
@@ -32,7 +23,7 @@
 
   height: 32px;
 
-  padding: var(--sf-form-p-input-block) var(--sf-form-p-input-inline);
+  padding: var(--sf-elm-py) var(--sf-elm-px);
 
   box-sizing: border-box;
 
@@ -54,13 +45,8 @@ a.sf-button:not([href]),
 
 /* /// */
 
-html.var .sf-button
-{
-  font-size: 15px;
-  font-family: 'Inter', ui-sans-serif, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-
+html.var .sf-button {
   border-radius: 3px;
-
   padding: 8px;
 }
 

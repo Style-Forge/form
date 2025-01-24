@@ -1,4 +1,10 @@
 :root {
+  --sf-radius: 3px;
+  --sf-disabled: 0.4;
+  --sf-elm-py: 0.5em;
+  --sf-elm-px: 0.5em;
+
+  /* color */
   --sf-c-form-white: 0 0% 100%;
   --sf-c-form-info: 200 100% 60%;
   --sf-c-form-error: 0 100% 60%;
@@ -40,7 +46,7 @@ html[data-theme='dark'], html.dark {
 
 @media (prefers-color-scheme: dark) {
   html[data-theme='auto'], html.auto {
-    color-scheme: light dark;
+    color-scheme: dark;
 
     --sf-c-form-white: var(--sf-dark-c-form-white);
 
