@@ -12,14 +12,14 @@
   padding-bottom: 0.5em;
 }
 
-.sf-description, .sf-invalid, .sf-valid { display: none }
 .sf-description { display: block }
-
-.sf-invalid { color: hsl(var(--sf-c-form-error)) }
-.sf-valid:not(.sf-description) { color: hsl(var(--sf-c-form-txt)) }
+.sf-invalid, .sf-valid { display: none }
 
 .show.sf-description, .show.sf-invalid, .show.sf-valid { display: block }
 .hide.sf-description, .hide.sf-invalid, .hide.sf-valid { display: none }
+
+.sf-invalid { color: hsl(var(--sf-c-form-error)) }
+.sf-valid:not(.sf-description) { color: hsl(var(--sf-c-form-txt)) }
 
 /* validates */
 
@@ -49,9 +49,9 @@
 .error:not(:disabled) + .sf-valid + .sf-description
 { display: none !important }
 
-.validates input[type='checkbox'] ~ .sf-description { display: none }
-.validates input[type='checkbox']:invalid ~ .sf-invalid { display: block }
-.validates input[type='checkbox']:valid ~ .sf-valid { display: block }
+.validates input[type='checkbox'] ~ .sf-invalid { display: block }
+.validates input[type='checkbox']:checked ~ .sf-invalid { display: none }
+.validates input[type='checkbox']:checked ~ .sf-valid { display: block }
 
 .validates:required:invalid:not(:focus) { border-bottom-color: hsl(var(--sf-c-form-warning)) }
 .validates:required:invalid:not(:disabled) { border-bottom-color: hsl(var(--sf-c-form-warning)) }
@@ -65,17 +65,6 @@
 {
   border-bottom-color: hsl(var(--sf-c-form-error));
   outline: none;
-}
-
-label.validates.sf-switch .sf-description,
-label.validates.sf-switch .sf-valid,
-label.validates.sf-switch .sf-invalid,
-label.validates.sf-checkbox .sf-description,
-label.validates.sf-checkbox .sf-valid,
-label.validates.sf-checkbox .sf-invalid {
-  width: 100%;
-  /* --sf-lh-normal: 1.1875; */
-  /* line-height: var(--sf-lh-normal); */
 }
 
 form.validates:invalid .sf-button[type='submit'] {
@@ -105,3 +94,7 @@ html.var .sf-invalid { color: hsl(0, 100%, 60%) }
 html.var .error:not(:disabled) { border-bottom-color: hsl(0, 100%, 60%) }
 html.var .validates:invalid:required { border-bottom-color: hsl(39, 100%, 50%) }
 html.var .validates:invalid:focus { border-bottom-color: hsl(0, 100%, 60%) }
+
+/* html.grid display: block (down) */
+html.grid .sf-description { display: block }
+html.grid .sf-invalid, html.grid .sf-valid { display: none }
