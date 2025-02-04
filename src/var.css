@@ -1,5 +1,7 @@
 :root {
-  --sf-radius: 3px;
+  --sf-input-width: 32px;
+  --sf-input-hight: 32px;
+
   --sf-disabled: 0.4;
   --sf-elm-py: 0.5em;
   --sf-elm-px: 0.5em;
