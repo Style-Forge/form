@@ -19,9 +19,9 @@
   text-decoration: none;
   text-transform: none;
 
-  border-radius: var(--sf-radius);
+  border-radius: 3px;
 
-  height: 32px;
+  min-height: var(--sf-input-hight);
 
   padding: var(--sf-elm-py) var(--sf-elm-px);
 
@@ -46,8 +46,8 @@ a.sf-button:not([href]),
 /* /// */
 
 html.var .sf-button {
-  border-radius: 3px;
   padding: 8px;
+  min-height: 32px;
 }
 
 html.var .sf-button:not([class*='sf-c-']) {

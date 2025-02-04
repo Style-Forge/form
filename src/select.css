@@ -28,7 +28,7 @@
 }
 
 .sf-select:not([multiple]) {
-  height: 32px;
+  min-height: var(--sf-input-hight);
   padding: 0 var(--sf-elm-px);
   border-width: 0 0 1px;
 }
@@ -50,7 +50,10 @@
 
 /* /// */
 
-html.var .sf-select:not([multiple]) { padding: 0 0 0 8px }
+html.var .sf-select:not([multiple]) {
+  padding: 0 0 0 8px;
+  min-height: 32px;
+}
 html.var .sf-select { padding: 8px 0 8px 8px }
 
 html.var .sf-select:not([class*='sf-c-']) {

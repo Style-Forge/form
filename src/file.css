@@ -10,6 +10,7 @@
 
   width: auto;
   max-width: 100%;
+  min-height: var(--sf-input-hight);
 
   overflow: hidden;
   white-space: nowrap;
@@ -33,9 +34,9 @@
   background: hsl(var(--sf-c-form-bg) / 20%);
   border: 1px solid hsl(var(--sf-c-form-bd) / 20%);
 
-  height: 32px;
+  min-height: var(--sf-input-hight);
 
-  border-radius: var(--sf-radius);
+  border-radius: 3px;
 }
 .sf-input[type='file']:focus-visible { outline: none }
 .sf-input[type='file']:focus-visible::file-selector-button {
@@ -55,13 +56,14 @@
 
 html.var .sf-input[type='file'] {
   padding: 0; /* required */
+  min-height: 32px;
 }
 html.var .sf-input[type='file']::file-selector-button {
   color: hsl(0, 0%, 10%);
   background: hsla(0, 0%, 100%, 0.2);
   border: 1px solid hsla(0, 0%, 10%, 0.2);
 
-  border-radius: 3px;
+  min-height: 32px;
 }
 html.var .sf-input[type='file']:focus-visible::file-selector-button { outline: 1px solid hsl(200, 100%, 60%) }
 

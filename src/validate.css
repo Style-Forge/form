@@ -12,11 +12,11 @@
   padding-bottom: 0.5em;
 }
 
-.sf-description { display: block }
-.sf-invalid, .sf-valid { display: none }
+html .sf-description { display: block }
+html .sf-invalid, html .sf-valid { display: none }
 
-.show.sf-description, .show.sf-invalid, .show.sf-valid { display: block }
-.hide.sf-description, .hide.sf-invalid, .hide.sf-valid { display: none }
+.show.sf-description, .show.sf-invalid, .show.sf-valid { display: block !important }
+.hide.sf-description, .hide.sf-invalid, .hide.sf-valid { display: none !important }
 
 .sf-invalid { color: hsl(var(--sf-c-form-error)) }
 .sf-valid:not(.sf-description) { color: hsl(var(--sf-c-form-txt)) }
@@ -96,5 +96,11 @@ html.var .validates:invalid:required { border-bottom-color: hsl(39, 100%, 50%) }
 html.var .validates:invalid:focus { border-bottom-color: hsl(0, 100%, 60%) }
 
 /* html.grid display: block (down) */
-html.grid .sf-description { display: block }
-html.grid .sf-invalid, html.grid .sf-valid { display: none }
+html.var.grid .sf-description { display: block }
+html.var.grid .sf-invalid, html.var.grid .sf-valid { display: none }
+
+html.var.grid .validates:focus ~ .sf-description { display: none }
+html.var.grid .validates:focus ~ .validates ~ .sf-description { display: block }
+
+html.var.grid .validates input[type='checkbox'] ~ .sf-invalid { display: block }
+html.var.grid .validates input[type='checkbox']:checked ~ .sf-invalid { display: none }

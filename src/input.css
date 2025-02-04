@@ -26,9 +26,9 @@
   outline: none;
 
   width: 100%;
-  height: 32px;
+  min-height: var(--sf-input-hight);
 
-  padding: var(--sf-elm-py) var(--sf-elm-px);
+  padding: calc(var(--sf-elm-py) * 0.25) var(--sf-elm-px);
 
   box-sizing: border-box;
   vertical-align: top;
@@ -81,7 +81,10 @@
 
 /* /// */
 
-html.var .sf-input { padding: 8px }
+html.var .sf-input {
+  padding: 4px 8px;
+  min-height: 32px;
+}
 
 html.var .sf-input:not([class*='sf-c-']) {
   color: hsl(0, 0%, 10%);

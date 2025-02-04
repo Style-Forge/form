@@ -17,7 +17,7 @@
 
   padding: var(--sf-elm-py) var(--sf-elm-px);
 
-  border-radius: var(--sf-radius);
+  border-radius: 3px;
 
   resize: vertical;
 
@@ -52,8 +52,6 @@ html.var .sf-textarea {
   min-height: calc((1.499535em + 2px + 0.5em) * 4);
 
   padding: 8px;
-
-  border-radius: 3px;
 }
 
 html.var .sf-textarea:not([class*='sf-c-']) {
